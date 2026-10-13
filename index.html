@@ -1,0 +1,1527 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Le Poké Doré – Food truck de poké bowls à Marignane</title>
+  <meta name="description" content="Poké bowls frais et faits maison, soupes et desserts à 2,50 €. Food truck à Marignane du lundi au jeudi, 11h à 14h. Planning, carte, avis et contact.">
+  <link rel="canonical" href="https://www.lepokedore.fr/">
+  <meta name="theme-color" content="#0d1f8c">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Le Poké Doré">
+  <meta property="og:title" content="Le Poké Doré – Food truck de poké bowls à Marignane">
+  <meta property="og:description" content="Poké bowls frais et faits maison, soupes et desserts à 2,50 €. Food truck à Marignane du lundi au jeudi, 11h à 14h. Planning, carte, avis et contact.">
+  <meta property="og:url" content="https://www.lepokedore.fr/">
+  <meta property="og:image" content="https://www.lepokedore.fr/image/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Le Poké Doré – Food truck de poké bowls à Marignane">
+  <meta name="twitter:description" content="Poké bowls frais et faits maison, soupes et desserts à 2,50 €. Food truck à Marignane du lundi au jeudi, 11h à 14h. Planning, carte, avis et contact.">
+  <meta name="twitter:image" content="https://www.lepokedore.fr/image/og-image.jpg">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Caveat:wght@700&family=Rubik:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=2">
+  <style>
+
+    /* ---------- HERO ---------- */
+    .hero{
+      position:relative;
+      min-height:100svh;
+      overflow:hidden;
+      display:grid;
+      grid-template-rows:auto 1fr auto;
+      isolation:isolate;
+      color:var(--cream);
+    }
+    .hero__bg{
+      position:absolute;inset:0;z-index:-2;
+      background:url("image/videoheader-poster.jpg") center/cover no-repeat;
+      animation:kenburns 18s ease-in-out infinite alternate;
+      transform-origin:center;
+    }
+    @keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.08)}}
+    .hero__video{
+      position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
+      opacity:0;transition:opacity .8s ease;
+    }
+    .hero__video.is-ready{opacity:1}
+    .hero__shade{
+      position:absolute;inset:0;z-index:-1;
+      background:
+        radial-gradient(120% 80% at 50% 50%, rgba(6,18,80,.08), rgba(6,18,80,.42)),
+        linear-gradient(180deg, rgba(6,18,80,.45) 0%, rgba(6,18,80,.25) 40%, rgba(6,18,80,.55) 100%);
+    }
+    /* grain */
+    .hero::after{
+      content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.07;
+      background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    }
+    /* wavy bottom edge */
+    .hero__wave{
+      position:absolute;left:0;right:0;bottom:-2px;z-index:2;
+      width:100%;height:clamp(40px,6vw,90px);display:block;
+    }
+    .hero__wave path{fill:var(--cream)}
+
+    .hero .nav__logo img{
+      filter:drop-shadow(0 6px 0 rgba(6,18,80,.35)) brightness(0) invert(.96) sepia(.35) saturate(.6);
+    }
+
+    /* ---------- CONTENT ---------- */
+    .hero__content{
+      position:relative;z-index:3;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      text-align:center;padding:clamp(20px,4vw,40px) 16px clamp(60px,10vw,120px);
+    }
+    .hero__title{
+      font-family:"Bowlby One SC",cursive;font-weight:400;
+      font-size:clamp(2.6rem,9.2vw,8.6rem);
+      line-height:.9;letter-spacing:.005em;text-transform:uppercase;
+      max-width:16ch;
+      text-shadow:0 .06em 0 rgba(6,18,80,.45), 0 24px 60px rgba(6,18,80,.5);
+    }
+    .hero__title .accent{color:var(--yellow)}
+    .btn{
+      margin-top:clamp(28px,4vw,56px);
+      display:inline-block;text-decoration:none;
+      font:700 clamp(1.25rem,2.2vw,1.9rem)/1 "Caveat",cursive;letter-spacing:.06em;text-transform:uppercase;
+      color:var(--navy);background:var(--yellow);
+      padding:.95em 1.9em;border-radius:14px;
+      box-shadow:0 8px 0 var(--navy-deep);
+      transform:rotate(-1.5deg);
+      transition:transform .2s,box-shadow .2s;
+    }
+    .btn:hover{transform:rotate(-1.5deg) translateY(-3px);box-shadow:0 11px 0 var(--navy-deep)}
+    .btn:active{transform:rotate(-1.5deg) translateY(5px);box-shadow:0 3px 0 var(--navy-deep)}
+
+    /* ---------- reveal ---------- */
+    .hero__title.reveal{animation-delay:.45s}
+    .btn.reveal{animation-delay:.75s}
+    .btn.reveal{animation-name:upbtn}
+    @keyframes upbtn{to{opacity:1;transform:rotate(-1.5deg)}}
+
+    @media (prefers-reduced-motion:reduce){
+      .hero__bg{animation:none}
+      .btn.reveal{transform:rotate(-1.5deg)}
+    }
+
+    /* ---------- SAVEURS / CARROUSEL ---------- */
+    .saveurs{position:relative;overflow:hidden;padding:clamp(56px,8vw,110px) 0 clamp(48px,6vw,80px);color:var(--navy)}
+    .saveurs__head{text-align:center;padding:0 16px;position:relative;z-index:2}
+    .saveurs__title{
+      font-family:"Bowlby One SC",cursive;font-weight:400;text-transform:uppercase;
+      font-size:clamp(1.9rem,5.2vw,4.2rem);line-height:1;letter-spacing:.01em;
+      display:inline-flex;align-items:center;gap:.35em;
+    }
+    .saveurs__title svg{width:.55em;height:.55em;flex:none;fill:var(--navy)}
+    .saveurs__sub{margin-top:.6em;font:600 clamp(1.05rem,2vw,1.6rem)/1.3 "Rubik",sans-serif}
+
+    .tabs{display:inline-flex;gap:6px;margin-top:clamp(18px,2.4vw,30px);padding:6px;border-radius:999px;border:1.5px solid rgba(13,31,140,.25);background:rgba(255,255,255,.4)}
+    .tab{
+      border:0;cursor:pointer;border-radius:999px;padding:12px 22px;background:transparent;color:var(--navy);
+      font:600 .82rem/1 "Rubik",sans-serif;letter-spacing:.06em;text-transform:uppercase;transition:background .25s,color .25s;
+    }
+    .tab.is-active{background:var(--navy);color:var(--cream)}
+    @media (hover:hover){.tab:not(.is-active):hover{background:rgba(13,31,140,.1)}}
+    .carousel[hidden]{display:none}
+    .carousel{position:relative;margin-top:clamp(28px,4vw,56px);z-index:2;animation:tabin .5s cubic-bezier(.2,.8,.2,1)}
+    @keyframes tabin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+    .carousel__viewport{overflow:hidden;width:100%;touch-action:pan-y;-webkit-user-select:none;user-select:none}
+    .carousel__track img{-webkit-user-drag:none;pointer-events:none}
+    .slide__price{margin-top:.9em;font-family:"Bowlby One SC",cursive;font-size:clamp(1.4rem,2.4vw,2.2rem);color:#e3a400;line-height:1}
+    .slide__btn{pointer-events:auto}
+    .carousel__track{
+      --w:min(1100px,84vw);--gap:clamp(16px,3vw,48px);
+      display:flex;gap:var(--gap);width:max-content;
+      transform:translateX(calc(50vw - var(--w)/2 - var(--i,0)*(var(--w) + var(--gap))));
+      transition:transform .7s cubic-bezier(.2,.8,.2,1);
+    }
+    .carousel__track.is-jumping,
+    .carousel__track.is-jumping .slide,
+    .carousel__track.is-jumping .slide__bits{transition:none !important}
+    .slide{
+      width:var(--w);flex:none;
+      display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:center;gap:clamp(16px,3vw,40px);
+      opacity:.4;transform:scale(.94);transition:opacity .6s,transform .6s;
+      padding:10px 0;
+    }
+    .slide.is-active{opacity:1;transform:none}
+    .slide__media{position:relative;animation:bowlfloat 7s ease-in-out infinite}
+    .slide:nth-child(2) .slide__media{animation-delay:1.5s}
+    .slide:nth-child(3) .slide__media{animation-delay:3s}
+    .slide__media img{width:100%;height:auto;display:block}
+    .slide__bowl{position:relative;z-index:1}
+    /* ombre douce dessinée sous le bowl (pas de filtre sur l'image : Safari le rogne) */
+    .slide__media::before{
+      content:"";position:absolute;z-index:0;left:22%;right:22%;bottom:-4%;height:16%;
+      background:radial-gradient(ellipse at center, rgba(6,18,80,.26) 0%, rgba(6,18,80,.12) 45%, rgba(6,18,80,0) 72%);
+    }
+    .slide__bits{z-index:2}
+    /* les ingrédients : rangés dans le bowl quand la slide est sur le côté, ils jaillissent quand elle arrive au centre */
+    .slide__bits{
+      position:absolute;inset:0;
+      transform:scale(.18) rotate(-20deg);opacity:0;
+      transform-origin:50% 56%;
+      /* même durée et même courbe que le glissement du carrousel (.7s) */
+      transition:transform .75s cubic-bezier(.2,.8,.25,1.15),opacity .3s ease;
+    }
+    .slide.is-active .slide__bits{transform:none;opacity:1}
+    @keyframes bowlfloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-14px) rotate(1deg)}}
+    .slide__body{padding-right:clamp(0px,2vw,24px);min-width:0}
+    .slide__name{
+      font-family:"Bowlby One SC",cursive;font-weight:400;text-transform:uppercase;
+      font-size:clamp(2.2rem,5.6vw,5.4rem);line-height:.92;letter-spacing:.005em;
+    }
+    .slide__name .l1{display:block;color:#e3a400}
+    .slide__name .l2{display:block;color:var(--navy)}
+    .slide__name .l2.is-long{font-size:.72em}
+    .slide__text{margin-top:1.2em;max-width:34ch;font:600 clamp(.95rem,1.25vw,1.15rem)/1.5 "Rubik",sans-serif;color:var(--navy)}
+    .slide__price{margin-top:.9em;font-family:"Bowlby One SC",cursive;font-size:clamp(1.4rem,2.4vw,2.2rem);color:#e3a400;line-height:1}
+    .slide__btn{
+      margin-top:1.6em;display:inline-block;text-decoration:none;
+      font:700 clamp(1.05rem,1.6vw,1.4rem)/1 "Caveat",cursive;letter-spacing:.06em;text-transform:uppercase;
+      color:var(--navy);background:var(--yellow);padding:.9em 1.7em;border-radius:12px;
+      box-shadow:0 6px 0 var(--navy-deep);transform:rotate(-1.5deg);transition:transform .2s,box-shadow .2s;
+    }
+    .slide__btn:hover{transform:rotate(-1.5deg) translateY(-3px);box-shadow:0 9px 0 var(--navy-deep)}
+
+    .carousel__nav{display:flex;align-items:center;justify-content:center;gap:clamp(18px,3vw,40px);margin-top:clamp(20px,3vw,36px)}
+    .carousel__arrow{
+      width:56px;height:56px;border-radius:50%;border:1.5px solid rgba(13,31,140,.35);background:transparent;
+      color:var(--navy);cursor:pointer;display:grid;place-items:center;transition:background .25s,color .25s,transform .2s;
+    }
+    .carousel__arrow svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    @media (hover:hover){.carousel__arrow:hover{background:var(--navy);color:var(--cream);transform:translateY(-2px)}}
+    .carousel__dots{display:flex;gap:9px}
+    .carousel__dot{
+      width:11px;height:22px;border:0;padding:0;cursor:pointer;background:rgba(13,31,140,.28);
+      clip-path:polygon(0 0,100% 6%,88% 50%,100% 94%,0 100%,12% 50%);transition:background .25s,transform .25s;
+    }
+    .carousel__dot.is-active{background:var(--navy);transform:scaleX(1.5)}
+
+    /* ingrédients qui volent autour de la section */
+    .saveurs .food{position:absolute;z-index:1;pointer-events:none;filter:drop-shadow(0 12px 14px rgba(6,18,80,.2));transition:opacity .4s,transform .4s}
+    .saveurs .food[data-for]{opacity:0;transform:scale(.6)}
+    .saveurs[data-active="bowls-carousel"] .food[data-for="bowls-carousel"],
+    .saveurs[data-active="soups-carousel"] .food[data-for="soups-carousel"],
+    .saveurs[data-active="desserts-carousel"] .food[data-for="desserts-carousel"]{opacity:1;transform:none}
+    /* desserts : pas de calque d'ingrédients, le pot est un peu plus petit */
+    .slide--dessert .slide__media{padding:0 8%}
+    .saveurs .food img{display:block;width:100%;height:auto;animation:float 6s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-14px) rotate(calc(var(--r,0deg) + 4deg))}}
+    .saveurs .food--a{left:4%;top:9%;width:clamp(50px,6vw,110px)}
+    .saveurs .food--a img{--r:-15deg}
+    .saveurs .food--b{right:5%;top:12%;width:clamp(60px,7vw,130px)}
+    .saveurs .food--b img{--r:12deg;animation-delay:1.3s}
+    .saveurs .food--c{left:10%;bottom:8%;width:clamp(60px,7vw,120px)}
+    .saveurs .food--c img{--r:20deg;animation-delay:2.2s}
+
+    @media (max-width:760px){
+      .carousel__track{--w:86vw}
+      .slide{grid-template-columns:1fr;text-align:center;gap:6px}
+      .slide__body{padding:0 8px}
+      .slide__text{margin:1em auto 0}
+      .saveurs .food--a,.saveurs .food--c{display:none}
+      .tabs{padding:4px;gap:4px}
+      .tab{padding:11px 14px;font-size:.72rem}
+      .saveurs .food--b{top:6%;right:3%;width:52px}
+    }
+
+    /* ---------- OÙ NOUS TROUVER ---------- */
+    .where{position:relative;overflow:hidden;padding:clamp(56px,8vw,110px) 0 clamp(56px,7vw,100px);color:var(--navy)}
+    .where__grid{
+      width:min(1360px,88vw);margin:0 auto;
+      display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,4vw,64px);align-items:center;
+    }
+    .where__title{
+      font-family:"Bowlby One SC",cursive;font-weight:400;text-transform:uppercase;
+      font-size:clamp(2.4rem,5.4vw,5rem);line-height:.95;letter-spacing:.005em;position:relative;
+      transform:rotate(-3deg);transform-origin:left bottom;width:fit-content;
+    }
+    .where__title .gold{color:#e3a400;display:inline-block;transform:translateX(.35em)}
+    .where__title .spark{position:absolute;width:.5em;height:.5em;fill:none;stroke:var(--navy);stroke-width:2.4;stroke-linecap:round}
+    .where__title .spark--l{left:-.55em;top:.1em}
+    .where__title .spark--r{right:-.5em;top:.7em;transform:scaleX(-1)}
+    .where__text{margin-top:1.1em;max-width:36ch;font:500 clamp(1.02rem,1.3vw,1.25rem)/1.5 "Rubik",sans-serif}
+
+    .plan{
+      margin-top:clamp(22px,3vw,40px);
+      background:rgba(255,255,255,.55);border:1.5px solid rgba(13,31,140,.12);
+      border-radius:22px;padding:clamp(18px,2.4vw,30px) clamp(16px,2.4vw,30px);
+      box-shadow:0 18px 40px rgba(6,18,80,.08);
+    }
+    .where__left{min-width:0}
+    .plan{position:relative;min-width:0;max-width:100%}
+    .plan__viewport{overflow:hidden;height:var(--plan-h,auto);min-width:0;width:100%}
+    .plan__panels{display:flex;height:100%;min-width:0;width:100%;transition:transform .6s cubic-bezier(.2,.8,.2,1);transform:translateX(calc(var(--p,0) * -100%))}
+    .plan__panel{flex:0 0 100%;width:100%;min-width:0;height:100%}
+    .plan__carte img{max-width:100%}
+    .plan__panel--carte{display:flex;flex-direction:column}
+    .plan__panel--carte .plan__carte{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+    .plan__hint{margin:8px 0 0;text-align:center;font:500 .78rem "Rubik",sans-serif;color:rgba(13,31,140,.6)}
+    .plan__arrow{
+      position:absolute;top:50%;z-index:3;width:44px;height:44px;border-radius:50%;transform:translateY(-50%);
+      border:1.5px solid rgba(13,31,140,.35);background:var(--cream);color:var(--navy);cursor:pointer;display:grid;place-items:center;
+      box-shadow:0 8px 18px rgba(6,18,80,.12);transition:background .25s,color .25s;
+    }
+    .plan__arrow svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .plan__arrow--prev{left:-22px}.plan__arrow--next{right:-22px}
+    @media (hover:hover){.plan__arrow:hover{background:var(--navy);color:var(--cream)}}
+    .plan__dots{display:flex;justify-content:center;gap:8px;margin-top:14px}
+    .plan__dots span{width:9px;height:9px;border-radius:50%;background:rgba(13,31,140,.25);transition:background .25s,transform .25s}
+    .plan__dots span.is-active{background:var(--navy);transform:scale(1.25)}
+    .plan__carte{display:block;border-radius:14px;overflow:hidden;border:1.5px solid rgba(13,31,140,.12);background:#fff}
+    .plan__carte img{width:100%;height:auto;display:block}
+    .plan__head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+    .plan__ico{width:44px;height:44px;flex:none;border-radius:50%;background:var(--yellow);display:grid;place-items:center}
+    .plan__ico svg{width:24px;height:24px;fill:none;stroke:var(--navy);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+    .plan__title{font:700 clamp(1.3rem,2vw,1.8rem)/1 "Caveat",cursive;letter-spacing:.06em;text-transform:uppercase;border-bottom:2px solid var(--navy);padding-bottom:4px}
+    .plan__list{list-style:none}
+    .plan__row{
+      display:grid;grid-template-columns:7.2em 1fr auto;align-items:center;gap:12px;
+      padding:9px 0;font:500 clamp(.9rem,1.1vw,1.05rem)/1.2 "Rubik",sans-serif;
+    }
+    .plan__row + .plan__row{border-top:1px dashed rgba(13,31,140,.14)}
+    .plan__day{font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:.82em;background:rgba(244,196,48,.35);padding:5px 8px;border-radius:6px;width:fit-content}
+    .plan__place{display:flex;align-items:center;gap:7px}
+    .plan__place svg{width:15px;height:15px;flex:none;fill:var(--navy)}
+    .plan__time{white-space:nowrap;font-weight:600;font-variant-numeric:tabular-nums}
+    .plan__row.is-closed{opacity:.5}
+    .plan__row.is-today .plan__day{background:var(--navy);color:var(--cream)}
+
+    /* côté droit : carte + truck */
+    .where__map{position:relative;aspect-ratio:1.18;min-height:340px}
+    .map{
+      position:absolute;left:8%;top:0;width:74%;height:64%;
+      border-radius:18px;overflow:hidden;transform:rotate(2deg);
+      box-shadow:0 20px 50px rgba(6,18,80,.14);background:#eef3e6;
+    }
+    .map__bg{width:100%;height:100%;display:block;object-fit:cover}
+
+    .truck{
+      position:absolute;left:-4%;bottom:0;width:92%;z-index:2;
+      animation:truckfloat 7s ease-in-out infinite;
+    }
+    .truck img{width:100%;height:auto;display:block}
+    .truck::before{content:"";position:absolute;left:12%;right:10%;bottom:1%;height:12%;background:radial-gradient(ellipse at center, rgba(6,18,80,.28), rgba(6,18,80,0) 70%);z-index:-1}
+    @keyframes truckfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+    .where__note{
+      position:absolute;right:0;top:4%;max-width:190px;text-align:right;
+      font:700 clamp(1rem,1.3vw,1.25rem)/1.15 "Caveat",cursive;letter-spacing:.04em;text-transform:uppercase;color:var(--navy);
+    }
+    .where__note svg{width:78px;height:auto;display:block;margin:0 0 6px auto;fill:none;stroke:var(--navy);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+    .where__arrow{position:absolute;right:16%;top:16%;width:110px;height:auto;fill:none;stroke:var(--navy);stroke-width:2.4;stroke-dasharray:7 7;stroke-linecap:round;z-index:1}
+    .where__cta{
+      position:absolute;right:0;top:40%;z-index:3;
+      display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+      font:700 clamp(1rem,1.3vw,1.25rem)/1.05 "Caveat",cursive;letter-spacing:.05em;text-transform:uppercase;
+      color:var(--navy);background:var(--yellow);padding:.75em 1.1em .75em .9em;border-radius:14px;
+      border:2px solid var(--navy);box-shadow:0 6px 0 var(--navy-deep);transform:rotate(-2deg);transition:transform .2s,box-shadow .2s;
+    }
+    .where__cta svg{width:26px;height:26px;flex:none;fill:var(--navy)}
+    .where__cta:hover{transform:rotate(-2deg) translateY(-3px);box-shadow:0 9px 0 var(--navy-deep)}
+    .where__phone{margin-top:18px;font:600 clamp(1rem,1.2vw,1.15rem)/1 "Rubik",sans-serif}
+    .where__phone a{color:var(--navy);text-decoration:none;border-bottom:2px solid var(--yellow);white-space:nowrap}
+
+    .where .dash{position:absolute;width:36px;height:auto;fill:none;stroke:var(--navy);stroke-width:3;stroke-linecap:round;z-index:1}
+
+    @media (max-width:900px){
+      .where__grid{grid-template-columns:minmax(0,1fr)}
+      .plan{padding:16px 12px}
+      .plan__arrow{width:36px;height:36px}
+      .plan__arrow--prev{left:4px}.plan__arrow--next{right:4px}
+      .plan__arrow{top:auto;bottom:6px;transform:none}
+      .plan__dots{margin-top:12px}
+      .plan__row{grid-template-columns:5.4em 1fr auto;gap:8px;font-size:.86rem;padding:8px 0}
+      .plan__day{font-size:.72em;padding:4px 6px}
+      .plan__time{font-size:.92em}
+      .where__title .spark--l{left:-.4em}
+      .where__map{aspect-ratio:1.1;min-height:300px;margin-top:10px}
+      .where__note{display:none}
+      .where__arrow{display:none}
+      .where__cta{top:auto;bottom:62%;right:0}
+      .map{left:6%;width:74%}
+      .truck{left:-6%;width:100%}
+    }
+
+    /* ---------- AVIS : mur de cartes en perspective ---------- */
+    .avis{position:relative;overflow:hidden;padding:clamp(56px,8vw,110px) 0 0;color:var(--navy)}
+    .avis__head{text-align:center;padding:0 16px;position:relative;z-index:2}
+    .avis__title{
+      font-family:"Bowlby One SC",cursive;font-weight:400;text-transform:uppercase;
+      font-size:clamp(1.9rem,5.2vw,4.2rem);line-height:1;letter-spacing:.01em;
+      display:inline-flex;align-items:center;gap:.35em;
+    }
+    .avis__title .spark{width:.55em;height:.55em;flex:none;fill:var(--navy)}
+    .avis__sub{margin-top:.6em;font:600 clamp(1.05rem,2vw,1.6rem)/1.3 "Rubik",sans-serif}
+    .score{
+      display:inline-flex;align-items:center;gap:22px;margin:28px auto 0;padding:16px 30px 16px 24px;
+      border-radius:999px;background:rgba(255,255,255,.6);border:1.5px solid rgba(13,31,140,.18);
+      box-shadow:0 18px 40px rgba(6,18,80,.08);text-align:left;text-decoration:none;color:var(--navy);
+      transition:transform .25s,box-shadow .25s;
+    }
+    .score:hover{transform:translateY(-3px);box-shadow:0 24px 50px rgba(6,18,80,.14)}
+    .score__note{font-family:"Bowlby One SC",cursive;font-size:56px;line-height:.9;color:var(--navy)}
+    .score__note small{font-size:20px;color:#e3a400;margin-left:2px}
+    .score__detail{display:flex;flex-direction:column;gap:3px;font:500 15px/1.3 "Rubik",sans-serif}
+    .score__detail .stars{font-size:18px;letter-spacing:.08em}
+    .score__detail strong{font-weight:600;font-size:17px}
+    .score__link{font-size:13.5px;letter-spacing:.04em;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--yellow)}
+    .stars{color:#e3a400;letter-spacing:.12em}
+
+    .gwall{--gap:16px;--duree:42s;position:relative;height:clamp(560px,68vh,740px);overflow:hidden;perspective:320px;margin-top:clamp(20px,3vw,40px)}
+    .gwall__scene{
+      position:absolute;left:50%;top:50%;display:flex;gap:var(--gap);
+      transform:translate(-50%,-50%) translateX(-80px) translateZ(-90px) rotateX(18deg) rotateY(-9deg) rotateZ(16deg);
+      transform-style:preserve-3d;
+    }
+    .gcol{display:flex;flex-direction:column;gap:var(--gap);width:310px;flex-shrink:0}
+    .gcol__track{display:flex;flex-direction:column;gap:var(--gap);flex-shrink:0;animation:gcol-up var(--duree) linear infinite}
+    .gcol--rev .gcol__track{animation-direction:reverse}
+    .gwall:hover .gcol__track{animation-play-state:paused}
+    @keyframes gcol-up{from{transform:translateY(0)}to{transform:translateY(calc(-100% - var(--gap)))}}
+    .gcard{
+      margin:0;padding:20px 20px 22px;border-radius:16px;background:#fff;
+      border:1.5px solid rgba(13,31,140,.12);box-shadow:0 18px 40px -28px rgba(6,18,80,.4);
+      display:flex;flex-direction:column;gap:10px;
+    }
+    .gcard__head{display:flex;align-items:center;gap:10px}
+    .gcard__avatar{width:40px;height:40px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;background:var(--navy);color:var(--yellow);font-family:"Bowlby One SC",cursive;font-size:18px}
+    .gcard__head figcaption{display:flex;flex-direction:column;line-height:1.25;min-width:0;flex:1}
+    .gcard__head b{font:600 15px "Rubik",sans-serif;color:var(--navy)}
+    .gcard__head small{font:500 12.5px "Rubik",sans-serif;color:rgba(13,31,140,.6)}
+    .gcard__g{width:18px;height:18px;flex-shrink:0}
+    .gcard .stars{font-size:14px}
+    .gcard blockquote{margin:0;font:500 15.5px/1.5 "Rubik",sans-serif;color:#1c2550}
+    .gwall__fade{position:absolute;pointer-events:none;z-index:2}
+    .gwall__fade--t{inset:0 0 auto 0;height:22%;background:linear-gradient(180deg,var(--cream),transparent)}
+    .gwall__fade--b{inset:auto 0 0 0;height:22%;background:linear-gradient(0deg,var(--cream),transparent)}
+    .gwall__fade--l{inset:0 auto 0 0;width:18%;background:linear-gradient(90deg,var(--cream),transparent)}
+    .gwall__fade--r{inset:0 0 0 auto;width:18%;background:linear-gradient(270deg,var(--cream),transparent)}
+    @media (max-width:860px){
+      .gwall{height:520px;perspective:260px}
+      .gwall__scene{transform:translate(-50%,-50%) translateX(-30px) translateZ(-60px) rotateX(14deg) rotateY(-6deg) rotateZ(10deg)}
+      .gcol{width:250px}
+      .gcol:nth-child(n+4){display:none}
+    }
+    @media (max-width:640px){
+      .gcol:nth-child(n+3){display:none}
+      .score{gap:16px;padding:14px 22px 14px 18px}
+      .score__note{font-size:46px}
+    }
+    @media (prefers-reduced-motion:reduce){.gcol__track{animation:none}}
+
+    /* ---------- Séparateurs ondulés entre sections ---------- */
+    /* la vague est dans la section, remplie de la couleur de la section précédente */
+    .sec-wave{position:absolute;left:0;right:0;top:-1px;width:100%;height:clamp(40px,6vw,90px);display:block;pointer-events:none;z-index:1}
+    .sec-wave path{fill:var(--prev-bg)}
+    .saveurs{--sec-bg:var(--cream);padding-bottom:clamp(36px,5vw,60px)}
+    .where{--sec-bg:#fdf0c2;--prev-bg:var(--cream);background:var(--sec-bg);padding-top:clamp(90px,12vw,170px);padding-bottom:clamp(56px,7vw,100px)}
+    .avis{--sec-bg:var(--cream);--prev-bg:#fdf0c2;background:var(--sec-bg);padding-top:clamp(90px,12vw,170px)}
+    .plan__arrow{background:var(--sec-bg)}
+    .gwall__fade--t{background:linear-gradient(180deg,var(--sec-bg),transparent)}
+    .gwall__fade--b{background:linear-gradient(0deg,var(--sec-bg),transparent)}
+    .gwall__fade--l{background:linear-gradient(90deg,var(--sec-bg),transparent)}
+    .gwall__fade--r{background:linear-gradient(270deg,var(--sec-bg),transparent)}
+    .score{background:rgba(255,255,255,.75)}
+
+    /* ---------- FAQ ---------- */
+    .faq{--sec-bg:#fdf0c2;--prev-bg:var(--cream);position:relative;background:var(--sec-bg);padding:clamp(90px,12vw,170px) 0 clamp(56px,7vw,100px);color:var(--navy)}
+    .faq__grid{width:min(1200px,88vw);margin:0 auto;display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,5vw,80px);align-items:start}
+    .faq__title{font-family:"Bowlby One SC",cursive;font-weight:400;text-transform:uppercase;font-size:clamp(2.2rem,4.8vw,4.4rem);line-height:.95;transform:rotate(-2deg);transform-origin:left bottom;width:fit-content}
+    .faq__title .gold{color:#e3a400}
+    .faq__sub{margin:1.4em 0 1.6em;max-width:32ch;font:500 clamp(1rem,1.3vw,1.2rem)/1.5 "Rubik",sans-serif}
+    .btn--small{margin-top:0;font-size:clamp(1rem,1.4vw,1.25rem);padding:.85em 1.4em;box-shadow:0 6px 0 var(--navy-deep)}
+    .faq__item{border-bottom:1.5px solid rgba(13,31,140,.18)}
+    .faq__item:first-child{border-top:1.5px solid rgba(13,31,140,.18)}
+    .faq__item summary{
+      list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;
+      padding:20px 0;font:600 clamp(1.05rem,1.5vw,1.3rem)/1.3 "Rubik",sans-serif;transition:color .25s;
+    }
+    .faq__item summary::-webkit-details-marker{display:none}
+    .faq__item summary:hover{color:#c98f00}
+    .faq__item summary i{position:relative;width:34px;height:34px;flex:none;border-radius:50%;border:1.5px solid rgba(13,31,140,.35);transition:background .3s,transform .5s cubic-bezier(.2,.8,.2,1)}
+    .faq__item summary i::before,.faq__item summary i::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2px;background:currentColor;transform:translate(-50%,-50%)}
+    .faq__item summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+    .faq__item[open] summary i{background:var(--navy);color:var(--cream);transform:rotate(135deg)}
+    .faq__a{overflow:hidden}
+    .faq__a p{margin:0 0 20px;max-width:60ch;font:500 clamp(.98rem,1.15vw,1.08rem)/1.6 "Rubik",sans-serif;color:#1c2550}
+    .faq__item[open] .faq__a p{animation:faqin .4s cubic-bezier(.2,.8,.2,1)}
+    @keyframes faqin{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+    /* ---------- CONTACT ---------- */
+    .contact{--sec-bg:var(--cream);--prev-bg:#fdf0c2;position:relative;background:var(--sec-bg);padding:clamp(90px,12vw,170px) 16px clamp(70px,9vw,130px);color:var(--navy);text-align:center}
+    .contact__title{font-family:"Bowlby One SC",cursive;font-weight:400;text-transform:uppercase;font-size:clamp(1.9rem,5.2vw,4.2rem);line-height:1;display:inline-flex;align-items:center;gap:.35em}
+    .contact__title .spark{width:.55em;height:.55em;flex:none;fill:var(--navy)}
+    .contact__sub{margin-top:.6em;font:600 clamp(1.05rem,2vw,1.6rem)/1.3 "Rubik",sans-serif}
+    .contact__tel{color:var(--navy);text-decoration:none;border-bottom:2px solid var(--yellow)}
+    .contact__cards{display:grid;grid-template-columns:minmax(0,420px);justify-content:center;gap:clamp(16px,2.5vw,32px);margin-top:clamp(28px,4vw,52px)}
+    .ccard{
+      display:flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;color:var(--navy);
+      padding:clamp(24px,3vw,36px) 20px;border-radius:22px;background:#fff;border:1.5px solid rgba(13,31,140,.12);
+      box-shadow:0 18px 40px rgba(6,18,80,.08);transition:transform .25s,box-shadow .25s;
+    }
+    .ccard:hover{transform:translateY(-4px);box-shadow:0 26px 50px rgba(6,18,80,.14)}
+    .ccard__ico{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:var(--yellow);margin-bottom:8px}
+    .ccard__ico svg{width:28px;height:28px;fill:none;stroke:var(--navy);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .ccard__label{font:600 .8rem "Rubik",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:rgba(13,31,140,.65)}
+    .ccard__value{font-family:"Bowlby One SC",cursive;font-size:clamp(1.5rem,2.6vw,2.2rem);line-height:1.1}
+    .ccard__hint{font:500 .92rem/1.4 "Rubik",sans-serif;color:rgba(13,31,140,.7);max-width:28ch}
+
+    .insta{width:min(1200px,92vw);margin:clamp(40px,6vw,80px) auto 0;text-align:left}
+    .insta__title{font:700 clamp(1.3rem,2vw,1.8rem)/1 "Caveat",cursive;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);text-align:center;margin-bottom:22px}
+
+    /* ---------- FOOTER ---------- */
+    .footer{--prev-bg:var(--cream);position:relative;background:var(--navy);color:var(--cream);padding:clamp(90px,12vw,170px) 0 28px}
+    .footer__grid{width:min(1200px,88vw);margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(28px,4vw,60px)}
+    .footer__logo{width:200px;height:auto;display:block;filter:brightness(0) invert(.96) sepia(.35) saturate(.6)}
+    .footer__brand p{margin:18px 0 0;max-width:34ch;font:500 .98rem/1.55 "Rubik",sans-serif;color:rgba(251,245,228,.8)}
+    .footer__social{display:flex;gap:10px;margin-top:18px}
+    .footer__social a{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;border:1.5px solid rgba(251,245,228,.4);color:var(--cream);transition:background .25s,color .25s}
+    .footer__social a:hover{background:var(--yellow);color:var(--navy);border-color:var(--yellow)}
+    .footer__social svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .footer__col h3{font:700 1.15rem "Caveat",cursive;letter-spacing:.08em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px}
+    .footer__col ul{list-style:none}
+    .footer__col li{display:flex;justify-content:space-between;gap:12px;padding:6px 0;font:500 .95rem/1.4 "Rubik",sans-serif;color:rgba(251,245,228,.85)}
+    .footer__col a{color:inherit;text-decoration:none;border-bottom:1.5px solid transparent;transition:border-color .25s,color .25s}
+    .footer__col a:hover{color:var(--yellow);border-color:var(--yellow)}
+    .footer__note{font-size:.82rem;color:rgba(251,245,228,.6)}
+    .footer__bottom{width:min(1200px,88vw);margin:40px auto 0;padding-top:18px;border-top:1px solid rgba(251,245,228,.18);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:500 .82rem "Rubik",sans-serif;color:rgba(251,245,228,.6)}
+    .footer__bottom a{color:inherit}
+    .footer__links a{text-decoration:none;border-bottom:1px solid rgba(251,245,228,.35)}
+    .footer__links a:hover{color:var(--yellow);border-color:var(--yellow)}
+
+    @media (max-width:900px){
+      .faq__grid{grid-template-columns:1fr}
+      .footer__grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:640px){
+      .contact__cards{grid-template-columns:1fr}
+      .footer__grid{grid-template-columns:1fr}
+      .footer__col li{justify-content:flex-start}
+      .faq__title{transform:none}
+    }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero__bg" role="img" aria-label="Le chef du Poké Doré prépare un bowl dans le food truck">
+    <video class="hero__video" autoplay muted loop playsinline poster="image/videoheader-poster.jpg" preload="auto">
+      <source src="image/videoheader.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero__shade"></div>
+
+  <nav class="nav" aria-label="Navigation principale">
+    <div class="nav__links">
+    <div class="nav__group reveal">
+      <a class="pill" href="#bowls">Nos poké bowls</a>
+      <a class="pill" href="histoire.html">Notre histoire</a>
+    </div>
+    <a class="nav__logo reveal" href="#" aria-label="Le Poké Doré – accueil">
+      <img src="image/logo.webp" alt="Le Poké Doré" width="1400" height="700">
+    </a>
+    <div class="nav__group nav__group--right reveal">
+      <a class="pill" href="#faq">FAQ</a>
+      <a class="pill" href="#truck">Le food truck</a>
+    </div>
+    </div>
+  </nav>
+
+  <div class="hero__content">
+    <h1 class="hero__title reveal">
+      Les poké bowls les plus <span class="accent">frais</span> du food truck !
+    </h1>
+    <a class="btn reveal" href="#bowls">Découvre nos poké bowls</a>
+  </div>
+
+  <svg class="hero__wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,60 C180,20 320,95 520,55 C720,15 880,90 1080,50 C1260,15 1360,70 1440,45 L1440,90 L0,90 Z"/>
+  </svg>
+</header>
+
+<section class="saveurs" id="bowls" data-active="bowls-carousel">
+  <div class="food food--a" data-for="bowls-carousel"><img src="image/saumon-cut.webp" alt="" width="700" height="667" loading="lazy" decoding="async"></div>
+  <div class="food food--b" data-for="bowls-carousel"><img src="image/avocat-cut.webp" alt="" width="700" height="645" loading="lazy" decoding="async"></div>
+  <div class="food food--c" data-for="bowls-carousel"><img src="image/carotteraper-cut.webp" alt="" width="700" height="499" loading="lazy" decoding="async"></div>
+  <div class="food food--a" data-for="soups-carousel"><img src="image/champignon-cut.webp" alt="" width="700" height="688" loading="lazy" decoding="async"></div>
+  <div class="food food--b" data-for="soups-carousel"><img src="image/potiron-cut.webp" alt="" width="700" height="690" loading="lazy" decoding="async"></div>
+  <div class="food food--c" data-for="soups-carousel"><img src="image/pain-cut.webp" alt="" width="700" height="579" loading="lazy" decoding="async"></div>
+  <div class="food food--a" data-for="desserts-carousel"><img src="image/chocolat-cut.webp" alt="" width="700" height="617" loading="lazy" decoding="async"></div>
+  <div class="food food--b" data-for="desserts-carousel"><img src="image/framboise-cut.webp" alt="" width="700" height="652" loading="lazy" decoding="async"></div>
+  <div class="food food--c" data-for="desserts-carousel"><img src="image/banane-cut.webp" alt="" width="700" height="656" loading="lazy" decoding="async"></div>
+
+  <div class="saveurs__head">
+    <h2 class="saveurs__title">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4l10 6-4 2 4 8-12-7 5-1z"/></svg>
+      Toutes nos saveurs
+      <svg viewBox="0 0 24 24" aria-hidden="true" style="transform:scaleX(-1)"><path d="M2 4l10 6-4 2 4 8-12-7 5-1z"/></svg>
+    </h2>
+    <p class="saveurs__sub">Frais et croquants, préparés sous tes yeux !</p>
+    <div class="tabs" role="tablist" aria-label="Choisir la catégorie">
+      <button class="tab is-active" type="button" role="tab" aria-selected="true" data-tab="bowls-carousel">Poké bowls</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="soups-carousel">Soupes</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="desserts-carousel">Desserts</button>
+    </div>
+  </div>
+
+  <div class="carousel" data-carousel id="bowls-carousel">
+    <div class="carousel__viewport">
+      <div class="carousel__track" style="--i:0">
+
+        <article class="slide is-active">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/bolesaumon-bowl.webp" alt="Bowl saumon : saumon mariné, mangue, avocat, chou rouge, carotte, edamame" width="1400" height="933" loading="lazy" decoding="async">
+            <img class="slide__bits" src="image/bolesaumon-bits.webp" alt="" aria-hidden="true" width="1400" height="933" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Poké</span><span class="l2">Saumon</span></h3>
+            <p class="slide__text">Saumon frais mariné, mangue, avocat, chou rouge, carotte râpée, pousses de soja et edamame. Le poké star du truck.</p>
+            <p class="slide__price">7,90 €</p>
+            <a class="slide__btn" href="#truck">Où nous trouver</a>
+          </div>
+        </article>
+
+        <article class="slide">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/bolepoulet-bowl.webp" alt="Bowl poulet : poulet au sésame, ananas, avocat, radis, chou rouge, edamame" width="1400" height="933" loading="lazy" decoding="async">
+            <img class="slide__bits" src="image/bolepoulet-bits.webp" alt="" aria-hidden="true" width="1400" height="933" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Poké</span><span class="l2">Poulet</span></h3>
+            <p class="slide__text">Poulet mariné au sésame, ananas, avocat, radis, chou rouge, carotte râpée et edamame. Doux et gourmand.</p>
+            <p class="slide__price">7,90 €</p>
+            <a class="slide__btn" href="#truck">Où nous trouver</a>
+          </div>
+        </article>
+
+        <article class="slide">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/boletofu-bowl.webp" alt="Bowl tofu : tofu au sésame, fraises, concombre, avocat, chou rouge, edamame" width="1400" height="933" loading="lazy" decoding="async">
+            <img class="slide__bits" src="image/boletofu-bits.webp" alt="" aria-hidden="true" width="1400" height="933" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Poké</span><span class="l2">Tofu</span></h3>
+            <p class="slide__text">Tofu au sésame, fraises, concombre, avocat, chou rouge, carotte râpée et edamame. 100 % végé, 100 % frais.</p>
+            <p class="slide__price">7,90 €</p>
+            <a class="slide__btn" href="#truck">Où nous trouver</a>
+          </div>
+        </article>
+
+        <article class="slide">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/bolequinoa-bowl.webp" alt="Bowl base quinoa : quinoa, saumon mariné, mangue, avocat, radis, edamame" width="1400" height="933" loading="lazy" decoding="async">
+            <img class="slide__bits" src="image/bolequinoa-bits.webp" alt="" aria-hidden="true" width="1400" height="933" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Poké</span><span class="l2">Quinoa</span></h3>
+            <p class="slide__text">Base quinoa, saumon mariné, mangue, avocat, radis, chou rouge, carotte et edamame. Le plus complet.</p>
+            <p class="slide__price">8,90 €</p>
+            <a class="slide__btn" href="#truck">Où nous trouver</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="carousel__nav">
+      <button class="carousel__arrow" type="button" data-prev aria-label="Bowl précédent">
+        <svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+      </button>
+      <div class="carousel__dots" role="tablist" aria-label="Choisir un bowl"></div>
+      <button class="carousel__arrow" type="button" data-next aria-label="Bowl suivant">
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="carousel" data-carousel id="soups-carousel" hidden>
+    <div class="carousel__viewport">
+      <div class="carousel__track" style="--i:0">
+
+        <article class="slide is-active">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/soupepotiron-bowl.webp" alt="Soupe au potiron : velouté de potiron, châtaignes, graines de courge" width="1400" height="933" loading="lazy" decoding="async">
+            <img class="slide__bits" src="image/soupepotiron-bits.webp" alt="" aria-hidden="true" width="1400" height="933" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Soupe</span><span class="l2">Potiron</span></h3>
+            <p class="slide__text">Velouté de potiron, châtaignes grillées, graines de courge, crème et persil frais. Douce et réconfortante.</p>
+            <p class="slide__price">2,50 €</p>
+            <a class="slide__btn" href="#truck">Où nous trouver</a>
+          </div>
+        </article>
+        <article class="slide">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/soupeoignon-bowl.webp" alt="Soupe à l'oignon gratinée : oignons caramélisés, croûtons, fromage fondu" width="1400" height="933" loading="lazy" decoding="async">
+            <img class="slide__bits" src="image/soupeoignon-bits.webp" alt="" aria-hidden="true" width="1400" height="933" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Soupe</span><span class="l2">Oignon</span></h3>
+            <p class="slide__text">Soupe à l'oignon gratinée, oignons caramélisés, croûtons et fromage fondu au thym. La classique qui réchauffe.</p>
+            <p class="slide__price">2,50 €</p>
+            <a class="slide__btn" href="#truck">Où nous trouver</a>
+          </div>
+        </article>
+        <article class="slide">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/soupechampignons-bowl.webp" alt="Soupe aux champignons : velouté de champignons, croûtons dorés, persil" width="1400" height="933" loading="lazy" decoding="async">
+            <img class="slide__bits" src="image/soupechampignons-bits.webp" alt="" aria-hidden="true" width="1400" height="933" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Soupe</span><span class="l2">Champignons</span></h3>
+            <p class="slide__text">Velouté de champignons, croûtons dorés, pointe de crème et persil. Onctueux et parfumé.</p>
+            <p class="slide__price">2,50 €</p>
+            <a class="slide__btn" href="#truck">Où nous trouver</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="carousel__nav">
+      <button class="carousel__arrow" type="button" data-prev aria-label="Soupe précédente">
+        <svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+      </button>
+      <div class="carousel__dots" role="tablist" aria-label="Choisir une soupe"></div>
+      <button class="carousel__arrow" type="button" data-next aria-label="Soupe suivante">
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="carousel" data-carousel id="desserts-carousel" hidden>
+    <div class="carousel__viewport">
+      <div class="carousel__track" style="--i:0">
+
+        <article class="slide slide--dessert is-active">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/dessertcoco-bowl.webp" alt="Dessert Coco Passion" width="1000" height="957" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Coco</span><span class="l2">Passion</span></h3>
+            <p class="slide__text">Banane, crème de coco, coulis de fruits de la passion, coco râpée et chocolat râpé.</p>
+            <p class="slide__price">2,50 €</p>
+            <a class="slide__btn" href="#truck">Où nous trouver</a>
+          </div>
+        </article>
+        <article class="slide slide--dessert">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/dessertcrumble-bowl.webp" alt="Dessert Crumble aux pommes" width="1000" height="961" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Crumble</span><span class="l2">Pommes</span></h3>
+            <p class="slide__text">Fruits de saison (pommes, poires), cannelle, muesli, noisettes, amandes, graines de courge et sirop d'agave.</p>
+            <p class="slide__price">2,50 €</p>
+            <a class="slide__btn" href="#truck">Où nous trouver</a>
+          </div>
+        </article>
+        <article class="slide slide--dessert">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/dessertchocolat-bowl.webp" alt="Dessert Soyeux Chocolat" width="1000" height="957" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Soyeux</span><span class="l2">Chocolat</span></h3>
+            <p class="slide__text">Tofu soyeux, chocolat pâtissier, café, noisettes et sirop d'agave.</p>
+            <p class="slide__price">2,50 €</p>
+            <a class="slide__btn" href="#truck">Où nous trouver</a>
+          </div>
+        </article>
+        <article class="slide slide--dessert">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/dessertframboise-bowl.webp" alt="Dessert Onctueux de Framboise" width="1000" height="941" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Onctueux</span><span class="l2">Framboise</span></h3>
+            <p class="slide__text">Fromage blanc, purée de framboise et muesli caramélisé.</p>
+            <p class="slide__price">2,50 €</p>
+            <a class="slide__btn" href="#truck">Où nous trouver</a>
+          </div>
+        </article>
+        <article class="slide slide--dessert">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/dessertbanofi-bowl.webp" alt="Dessert Banofi" width="1000" height="963" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Le</span><span class="l2">Banofi</span></h3>
+            <p class="slide__text">Émietté de palet breton, caramel, bananes, fromage blanc et mascarpone.</p>
+            <p class="slide__price">2,50 €</p>
+            <a class="slide__btn" href="#truck">Où nous trouver</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="carousel__nav">
+      <button class="carousel__arrow" type="button" data-prev aria-label="Dessert précédent">
+        <svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+      </button>
+      <div class="carousel__dots" role="tablist" aria-label="Choisir un dessert"></div>
+      <button class="carousel__arrow" type="button" data-next aria-label="Dessert suivant">
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="where" id="truck">
+  <svg class="sec-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,0 L1440,0 L1440,50 C1360,75 1260,25 1080,55 C880,90 720,25 520,60 C320,95 180,30 0,70 Z"/>
+  </svg>
+  <div class="where__grid">
+    <div class="where__left">
+      <h2 class="where__title">
+        <svg class="spark spark--l" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h6M5 5l4 4M5 19l4-4"/></svg>
+        Où nous<br><span class="gold">trouver ?</span>
+        <svg class="spark spark--r" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h6M5 5l4 4M5 19l4-4"/></svg>
+      </h2>
+      <p class="where__text" style="margin-top:1.6em">Notre food truck se déplace dans ta ville pour te régaler avec des poké bowls frais, gourmands et faits maison.</p>
+      <p class="where__phone">Une question, une commande ? <a href="tel:+33769472309">07 69 47 23 09</a></p>
+
+      <div class="plan" data-plan>
+        <button class="plan__arrow plan__arrow--prev" type="button" data-plan-prev aria-label="Volet précédent">
+          <svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+        </button>
+        <button class="plan__arrow plan__arrow--next" type="button" data-plan-next aria-label="Volet suivant">
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <div class="plan__viewport">
+          <div class="plan__panels" style="--p:0">
+            <div class="plan__panel">
+            <div class="plan__head">
+              <span class="plan__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
+              <h3 class="plan__title">Planning de la semaine</h3>
+            </div>
+            <ul class="plan__list">
+              <li class="plan__row" data-day="1"><span class="plan__day">Lundi</span><span class="plan__place"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Centre-ville</span><span class="plan__time">11h00 – 14h00</span></li>
+              <li class="plan__row" data-day="2"><span class="plan__day">Mardi</span><span class="plan__place"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Centre-ville</span><span class="plan__time">11h00 – 14h00</span></li>
+              <li class="plan__row" data-day="3"><span class="plan__day">Mercredi</span><span class="plan__place"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Centre-ville</span><span class="plan__time">11h00 – 14h00</span></li>
+              <li class="plan__row" data-day="4"><span class="plan__day">Jeudi</span><span class="plan__place"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Centre-ville</span><span class="plan__time">11h00 – 14h00</span></li>
+              <li class="plan__row is-closed" data-day="5"><span class="plan__day">Vendredi</span><span class="plan__place">—</span><span class="plan__time">Fermé</span></li>
+              <li class="plan__row is-closed" data-day="6"><span class="plan__day">Samedi</span><span class="plan__place">—</span><span class="plan__time">Fermé</span></li>
+              <li class="plan__row is-closed" data-day="0"><span class="plan__day">Dimanche</span><span class="plan__place">—</span><span class="plan__time">Fermé</span></li>
+            </ul>
+            </div>
+            <div class="plan__panel plan__panel--carte">
+              <div class="plan__head">
+                <span class="plan__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM8 9h8M8 13h8M8 17h5"/></svg></span>
+                <h3 class="plan__title">Notre carte</h3>
+              </div>
+              <a class="plan__carte" href="image/carte.png" target="_blank" rel="noopener" aria-label="Ouvrir la carte en grand">
+                <img src="image/carte.webp" alt="La carte du Poké Doré : composition des pokés, tarifs des bowls, boissons, desserts et formules" loading="lazy" width="1024" height="1536">
+              </a>
+              <p class="plan__hint">Fais défiler la carte · clique pour l'ouvrir en grand</p>
+            </div>
+          </div>
+        </div>
+        <div class="plan__dots" aria-hidden="true"><span class="is-active"></span><span></span></div>
+      </div>
+    </div>
+
+    <div class="where__map">
+      <a class="map" href="https://www.google.com/maps/search/?api=1&query=Le+Pok%C3%A9+Dor%C3%A9+food+truck" target="_blank" rel="noopener" aria-label="Ouvrir l'itinéraire dans Google Maps">
+        <img class="map__bg" src="image/map.webp" alt="Plan du quartier avec l'emplacement du food truck Le Poké Doré" width="1397" height="1126" loading="lazy" decoding="async">
+      </a>
+
+      <svg class="where__arrow" viewBox="0 0 120 70" aria-hidden="true"><path d="M4 66 C30 30 60 20 112 8"/><path d="M100 4 l12 4 -6 11" stroke-dasharray="0"/></svg>
+      <p class="where__note">
+        <svg viewBox="0 0 80 48" aria-hidden="true"><rect x="6" y="14" width="46" height="24" rx="3"/><path d="M52 20h14l8 10v8H52z"/><circle cx="18" cy="40" r="5"/><circle cx="62" cy="40" r="5"/><path d="M20 22c3-6 10-6 13 0M34 22c3-6 10-6 13 0"/></svg>
+        Clique sur la carte pour l'itinéraire
+      </p>
+      <a class="where__cta" href="https://www.google.com/maps/search/?api=1&query=Le+Pok%C3%A9+Dor%C3%A9+food+truck" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        Voir sur<br>Google Maps
+      </a>
+
+      <div class="truck"><img src="image/foodtruck-clean.webp" alt="Le food truck Le Poké Doré, auvent ouvert, avec le menu peint sur les côtés" width="1400" height="761" loading="lazy" decoding="async"></div>
+      <svg class="dash" style="left:2%;top:30%" viewBox="0 0 36 30" aria-hidden="true"><path d="M4 26 L12 12M16 28 L22 10M28 26 L33 16"/></svg>
+    </div>
+  </div>
+</section>
+
+<section class="avis" id="avis">
+  <svg class="sec-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,0 L1440,0 L1440,50 C1360,75 1260,25 1080,55 C880,90 720,25 520,60 C320,95 180,30 0,70 Z"/>
+  </svg>
+  <div class="avis__head">
+    <h2 class="avis__title">
+      <svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4l10 6-4 2 4 8-12-7 5-1z"/></svg>
+      Ils nous ont goûtés
+      <svg class="spark" viewBox="0 0 24 24" aria-hidden="true" style="transform:scaleX(-1)"><path d="M2 4l10 6-4 2 4 8-12-7 5-1z"/></svg>
+    </h2>
+    <p class="avis__sub">Des avis vrais, laissés sur Google par nos clients.</p>
+    <a class="score" href="https://www.google.com/maps/place/Le+Pok%C3%A9+d'Aur%C3%A9+Food+Truck/@43.3385466,5.1664519,17z/data=!4m8!3m7!1s0x12c9ed8f44db07c1:0x1dd109c5d7c57777!8m2!3d43.3385466!4d5.1664519!9m1!1b1!16s%2Fg%2F11h8j5_dvd" target="_blank" rel="noopener">
+      <span class="score__note">4,7<small>/5</small></span>
+      <span class="score__detail">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <strong>52 avis Google</strong>
+        <span class="score__link">Voir tous les avis →</span>
+      </span>
+    </a>
+  </div>
+
+  <div class="gwall" aria-label="Avis Google de clients du food truck">
+    <div class="gwall__scene">
+        <div class="gcol">
+          <div class="gcol__track">
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">J</span>
+                <figcaption><b>Jérôme G.</b><small>il y a 3 mois · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Engagés sur le feu de forêt de Rognac, nous avons été accueillis par le food truck Le Poké Doré. Tout au long de la nuit, vous êtes venu offrir des repas aux sapeurs-pompiers. Au-delà de la qualité des produits, c&#x27;est l&#x27;accueil chaleureux et la générosité qui nous ont touchés. Un immense merci.</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">A</span>
+                <figcaption><b>Amélie C.</b><small>il y a 2 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Très bon poké qui détrône de loin ceux de Pokawa ! Produits frais et de saison, accueil chaleureux et service top.</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">A</span>
+                <figcaption><b>Audrey D.</b><small>il y a 3 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Alors si vous doutez, ne doutez plus. Lucas nous régale depuis qu&#x27;il a repris le food truck. Ses poké bowls sont un vrai délice ! Sa citronnade est incontournable et je vous conseille également son bouillon 😋</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">C</span>
+                <figcaption><b>Clélie M.</b><small>il y a 3 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Très bon accueil et les poké bowls sont encore meilleurs ! Les produits sont frais, les marinades excellentes, les plats sont gourmands. C&#x27;est le rendez-vous hebdomadaire que je ne manque pas 😁</blockquote>
+            </figure>
+          </div>
+          <div class="gcol__track" aria-hidden="true">
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">J</span>
+                <figcaption><b>Jérôme G.</b><small>il y a 3 mois · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Engagés sur le feu de forêt de Rognac, nous avons été accueillis par le food truck Le Poké Doré. Tout au long de la nuit, vous êtes venu offrir des repas aux sapeurs-pompiers. Au-delà de la qualité des produits, c&#x27;est l&#x27;accueil chaleureux et la générosité qui nous ont touchés. Un immense merci.</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">A</span>
+                <figcaption><b>Amélie C.</b><small>il y a 2 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Très bon poké qui détrône de loin ceux de Pokawa ! Produits frais et de saison, accueil chaleureux et service top.</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">A</span>
+                <figcaption><b>Audrey D.</b><small>il y a 3 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Alors si vous doutez, ne doutez plus. Lucas nous régale depuis qu&#x27;il a repris le food truck. Ses poké bowls sont un vrai délice ! Sa citronnade est incontournable et je vous conseille également son bouillon 😋</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">C</span>
+                <figcaption><b>Clélie M.</b><small>il y a 3 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Très bon accueil et les poké bowls sont encore meilleurs ! Les produits sont frais, les marinades excellentes, les plats sont gourmands. C&#x27;est le rendez-vous hebdomadaire que je ne manque pas 😁</blockquote>
+            </figure>
+          </div>
+        </div>
+        <div class="gcol gcol--rev">
+          <div class="gcol__track">
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">A</span>
+                <figcaption><b>Audrey D.</b><small>il y a 3 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Alors si vous doutez, ne doutez plus. Lucas nous régale depuis qu&#x27;il a repris le food truck. Ses poké bowls sont un vrai délice ! Sa citronnade est incontournable et je vous conseille également son bouillon 😋</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">C</span>
+                <figcaption><b>Clélie M.</b><small>il y a 3 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Très bon accueil et les poké bowls sont encore meilleurs ! Les produits sont frais, les marinades excellentes, les plats sont gourmands. C&#x27;est le rendez-vous hebdomadaire que je ne manque pas 😁</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">F</span>
+                <figcaption><b>Félicia R.</b><small>il y a 3 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Nous avons adoré les poké bowls, nous avons goûté les 3 protéines et aucune ne nous a déçues. Les quantités sont généreuses et les produits sont frais. Je recommande !</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">M</span>
+                <figcaption><b>Maxime J.</b><small>il y a 3 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Très bonne découverte, des produits de qualité, accueil chaleureux, un service efficace, et de bons conseils selon les ingrédients que l&#x27;on prend, tout en restant à un tarif très abordable. Je recommande pour la pause déj ou un repas du soir.</blockquote>
+            </figure>
+          </div>
+          <div class="gcol__track" aria-hidden="true">
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">A</span>
+                <figcaption><b>Audrey D.</b><small>il y a 3 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Alors si vous doutez, ne doutez plus. Lucas nous régale depuis qu&#x27;il a repris le food truck. Ses poké bowls sont un vrai délice ! Sa citronnade est incontournable et je vous conseille également son bouillon 😋</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">C</span>
+                <figcaption><b>Clélie M.</b><small>il y a 3 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Très bon accueil et les poké bowls sont encore meilleurs ! Les produits sont frais, les marinades excellentes, les plats sont gourmands. C&#x27;est le rendez-vous hebdomadaire que je ne manque pas 😁</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">F</span>
+                <figcaption><b>Félicia R.</b><small>il y a 3 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Nous avons adoré les poké bowls, nous avons goûté les 3 protéines et aucune ne nous a déçues. Les quantités sont généreuses et les produits sont frais. Je recommande !</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">M</span>
+                <figcaption><b>Maxime J.</b><small>il y a 3 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Très bonne découverte, des produits de qualité, accueil chaleureux, un service efficace, et de bons conseils selon les ingrédients que l&#x27;on prend, tout en restant à un tarif très abordable. Je recommande pour la pause déj ou un repas du soir.</blockquote>
+            </figure>
+          </div>
+        </div>
+        <div class="gcol">
+          <div class="gcol__track">
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">F</span>
+                <figcaption><b>Félicia R.</b><small>il y a 3 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Nous avons adoré les poké bowls, nous avons goûté les 3 protéines et aucune ne nous a déçues. Les quantités sont généreuses et les produits sont frais. Je recommande !</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">M</span>
+                <figcaption><b>Maxime J.</b><small>il y a 3 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Très bonne découverte, des produits de qualité, accueil chaleureux, un service efficace, et de bons conseils selon les ingrédients que l&#x27;on prend, tout en restant à un tarif très abordable. Je recommande pour la pause déj ou un repas du soir.</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">G</span>
+                <figcaption><b>gwnd</b><small>il y a 3 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Nous avons goûté le poké bowl lors de festivités. Nous avons adoré. Le plat est copieux (et on avait pris le petit), on retrouve vraiment le goût de chaque ingrédient et la citronnade maison est délicieuse. Ça change et c&#x27;est très frais.</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">A</span>
+                <figcaption><b>Arnault P.</b><small>il y a 4 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Une expérience des plus agréables. Un poké sain, équilibré, ingrédients frais, de qualité et de saison. Les compositions sont intelligemment faites, une redécouverte à chaque passage. Bravo, continuez ainsi. À recommander +++</blockquote>
+            </figure>
+          </div>
+          <div class="gcol__track" aria-hidden="true">
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">F</span>
+                <figcaption><b>Félicia R.</b><small>il y a 3 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Nous avons adoré les poké bowls, nous avons goûté les 3 protéines et aucune ne nous a déçues. Les quantités sont généreuses et les produits sont frais. Je recommande !</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">M</span>
+                <figcaption><b>Maxime J.</b><small>il y a 3 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Très bonne découverte, des produits de qualité, accueil chaleureux, un service efficace, et de bons conseils selon les ingrédients que l&#x27;on prend, tout en restant à un tarif très abordable. Je recommande pour la pause déj ou un repas du soir.</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">G</span>
+                <figcaption><b>gwnd</b><small>il y a 3 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Nous avons goûté le poké bowl lors de festivités. Nous avons adoré. Le plat est copieux (et on avait pris le petit), on retrouve vraiment le goût de chaque ingrédient et la citronnade maison est délicieuse. Ça change et c&#x27;est très frais.</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">A</span>
+                <figcaption><b>Arnault P.</b><small>il y a 4 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Une expérience des plus agréables. Un poké sain, équilibré, ingrédients frais, de qualité et de saison. Les compositions sont intelligemment faites, une redécouverte à chaque passage. Bravo, continuez ainsi. À recommander +++</blockquote>
+            </figure>
+          </div>
+        </div>
+        <div class="gcol gcol--rev">
+          <div class="gcol__track">
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">G</span>
+                <figcaption><b>gwnd</b><small>il y a 3 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Nous avons goûté le poké bowl lors de festivités. Nous avons adoré. Le plat est copieux (et on avait pris le petit), on retrouve vraiment le goût de chaque ingrédient et la citronnade maison est délicieuse. Ça change et c&#x27;est très frais.</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">A</span>
+                <figcaption><b>Arnault P.</b><small>il y a 4 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Une expérience des plus agréables. Un poké sain, équilibré, ingrédients frais, de qualité et de saison. Les compositions sont intelligemment faites, une redécouverte à chaque passage. Bravo, continuez ainsi. À recommander +++</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">L</span>
+                <figcaption><b>Laura T.</b><small>il y a 6 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Merveilleuse expérience ! Le poké était délicieux, j&#x27;ai pris le tofu avec la sauce exotique !</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">J</span>
+                <figcaption><b>Jérôme G.</b><small>il y a 3 mois · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Engagés sur le feu de forêt de Rognac, nous avons été accueillis par le food truck Le Poké Doré. Tout au long de la nuit, vous êtes venu offrir des repas aux sapeurs-pompiers. Au-delà de la qualité des produits, c&#x27;est l&#x27;accueil chaleureux et la générosité qui nous ont touchés. Un immense merci.</blockquote>
+            </figure>
+          </div>
+          <div class="gcol__track" aria-hidden="true">
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">G</span>
+                <figcaption><b>gwnd</b><small>il y a 3 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Nous avons goûté le poké bowl lors de festivités. Nous avons adoré. Le plat est copieux (et on avait pris le petit), on retrouve vraiment le goût de chaque ingrédient et la citronnade maison est délicieuse. Ça change et c&#x27;est très frais.</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">A</span>
+                <figcaption><b>Arnault P.</b><small>il y a 4 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Une expérience des plus agréables. Un poké sain, équilibré, ingrédients frais, de qualité et de saison. Les compositions sont intelligemment faites, une redécouverte à chaque passage. Bravo, continuez ainsi. À recommander +++</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">L</span>
+                <figcaption><b>Laura T.</b><small>il y a 6 ans · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Merveilleuse expérience ! Le poké était délicieux, j&#x27;ai pris le tofu avec la sauce exotique !</blockquote>
+            </figure>
+            <figure class="gcard">
+              <div class="gcard__head">
+                <span class="gcard__avatar" aria-hidden="true">J</span>
+                <figcaption><b>Jérôme G.</b><small>il y a 3 mois · Google</small></figcaption>
+                <svg class="gcard__g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9l3.3-2.5Z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5L6.4 10c.8-2.3 3-4 5.6-4Z"/></svg>
+              </div>
+              <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+              <blockquote>Engagés sur le feu de forêt de Rognac, nous avons été accueillis par le food truck Le Poké Doré. Tout au long de la nuit, vous êtes venu offrir des repas aux sapeurs-pompiers. Au-delà de la qualité des produits, c&#x27;est l&#x27;accueil chaleureux et la générosité qui nous ont touchés. Un immense merci.</blockquote>
+            </figure>
+          </div>
+        </div>
+    </div>
+    <div class="gwall__fade gwall__fade--t"></div>
+    <div class="gwall__fade gwall__fade--b"></div>
+    <div class="gwall__fade gwall__fade--l"></div>
+    <div class="gwall__fade gwall__fade--r"></div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <svg class="sec-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,0 L1440,0 L1440,50 C1360,75 1260,25 1080,55 C880,90 720,25 520,60 C320,95 180,30 0,70 Z"/>
+  </svg>
+  <div class="faq__grid">
+    <div class="faq__head">
+      <h2 class="faq__title">Tes questions,<br><span class="gold">nos réponses</span></h2>
+      <p class="faq__sub">Tout ce qu'on nous demande au comptoir du food truck.</p>
+      <a class="btn btn--small" href="tel:+33769472309">Une autre question ? Appelle-nous</a>
+    </div>
+    <div class="faq__list">
+        <details class="faq__item">
+          <summary>Vos poké bowls sont-ils sans gluten ?<i aria-hidden="true"></i></summary>
+          <div class="faq__a"><p>Oui, nos poké bowls, sauces, marinades et desserts sont faits maison et sans gluten, hors certaines sauces. Dis-nous tes allergies au moment de commander, on adapte ton bowl.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Avez-vous des options végétariennes ou véganes ?<i aria-hidden="true"></i></summary>
+          <div class="faq__a"><p>Bien sûr. Le Poké Tofu est végétarien, et on le compose vegan sans crème ni fromage. Tous nos bowls se personnalisent : base, légumes, fruits, sauce et croquants au choix.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Le poisson est-il frais ?<i aria-hidden="true"></i></summary>
+          <div class="faq__a"><p>Le saumon est frais, mariné le jour même dans le food truck. Nos fruits et légumes sont de saison et préparés chaque matin.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Peut-on commander à l&#x27;avance ?<i aria-hidden="true"></i></summary>
+          <div class="faq__a"><p>Oui, appelle-nous au 07 69 47 23 09 pour préparer ta commande, on te dit quand elle est prête. Pratique pour la pause déjeuner.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Quels moyens de paiement acceptez-vous ?<i aria-hidden="true"></i></summary>
+          <div class="faq__a"><p>Carte bancaire, sans contact, espèces et tickets restaurant.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Où et quand vous trouver ?<i aria-hidden="true"></i></summary>
+          <div class="faq__a"><p>Du lundi au jeudi de 11h00 à 14h00 à Marignane. Le planning de la semaine et la carte sont dans la section « Où nous trouver ». Pour les évènements du week-end, suis-nous sur Instagram.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Peut-on privatiser le food truck pour un évènement ?<i aria-hidden="true"></i></summary>
+          <div class="faq__a"><p>Oui ! Mariage, anniversaire, séminaire ou repas d&#x27;entreprise : on vient avec le food truck et on compose les bowls sur place. Appelle-nous pour un devis.</p></div>
+        </details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <svg class="sec-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,0 L1440,0 L1440,50 C1360,75 1260,25 1080,55 C880,90 720,25 520,60 C320,95 180,30 0,70 Z"/>
+  </svg>
+  <div class="contact__head">
+    <h2 class="contact__title">
+      <svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4l10 6-4 2 4 8-12-7 5-1z"/></svg>
+      On se retrouve ?
+      <svg class="spark" viewBox="0 0 24 24" aria-hidden="true" style="transform:scaleX(-1)"><path d="M2 4l10 6-4 2 4 8-12-7 5-1z"/></svg>
+    </h2>
+    <p class="contact__sub">Pour commander ou réserver, appelle-nous au <a class="contact__tel" href="tel:+33769472309">07 69 47 23 09</a>.</p>
+  </div>
+
+  <div class="insta">
+    <h3 class="insta__title">Suis-nous sur Instagram</h3>
+    <!-- Elfsight Instagram Feed -->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div class="elfsight-app-d1fc5022-7a91-4690-85da-1fb1a06c376f" data-elfsight-app-lazy></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <svg class="sec-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,0 L1440,0 L1440,50 C1360,75 1260,25 1080,55 C880,90 720,25 520,60 C320,95 180,30 0,70 Z"/>
+  </svg>
+  <div class="footer__grid">
+    <div class="footer__brand">
+      <img class="footer__logo" src="image/logo.webp" alt="Le Poké Doré" width="1400" height="700">
+      <p>Food truck de poké bowls frais et faits maison, à Marignane et autour de l'étang de Berre.</p>
+      <div class="footer__social">
+        <a href="https://www.instagram.com/lepokedore" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.google.com/maps/place/Le+Pok%C3%A9+d'Aur%C3%A9+Food+Truck/@43.3385466,5.1664519,17z/data=!4m8!3m7!1s0x12c9ed8f44db07c1:0x1dd109c5d7c57777!8m2!3d43.3385466!4d5.1664519!9m1!1b1!16s%2Fg%2F11h8j5_dvd" target="_blank" rel="noopener" aria-label="Fiche Google"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h3>Horaires</h3>
+      <ul>
+        <li><span>Lundi – Jeudi</span><span>11h00 – 14h00</span></li>
+        <li><span>Vendredi – Dimanche</span><span>Fermé</span></li>
+        <li class="footer__note">Évènements le week-end, voir Instagram</li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h3>Le site</h3>
+      <ul>
+        <li><a href="#bowls">Nos poké bowls</a></li>
+        <li><a href="histoire.html">Notre histoire</a></li>
+        <li><a href="#truck">Où nous trouver</a></li>
+        <li><a href="#avis">Avis clients</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h3>Contact</h3>
+      <ul>
+        <li><a href="tel:+33769472309">07 69 47 23 09</a></li>
+        <li><a href="https://www.instagram.com/lepokedore" target="_blank" rel="noopener">@lepokedore</a></li>
+        <li>Marignane (13)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© <span data-year>2026</span> Le Poké Doré · Tous droits réservés</span>
+    <span class="footer__links"><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · <a href="https://acco-lab.fr" target="_blank" rel="noopener">Fait par Acco-lab</a></span>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vos poké bowls sont-ils sans gluten ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, nos poké bowls, sauces, marinades et desserts sont faits maison et sans gluten, hors certaines sauces. Dis-nous tes allergies au moment de commander, on adapte ton bowl."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Avez-vous des options végétariennes ou véganes ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bien sûr. Le Poké Tofu est végétarien, et on le compose vegan sans crème ni fromage. Tous nos bowls se personnalisent : base, légumes, fruits, sauce et croquants au choix."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le poisson est-il frais ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le saumon est frais, mariné le jour même dans le food truck. Nos fruits et légumes sont de saison et préparés chaque matin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Peut-on commander à l'avance ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, appelle-nous au 07 69 47 23 09 pour préparer ta commande, on te dit quand elle est prête. Pratique pour la pause déjeuner."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quels moyens de paiement acceptez-vous ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Carte bancaire, sans contact, espèces et tickets restaurant."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Où et quand vous trouver ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du lundi au jeudi de 11h00 à 14h00 à Marignane. Le planning de la semaine et la carte sont dans la section « Où nous trouver ». Pour les évènements du week-end, suis-nous sur Instagram."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Peut-on privatiser le food truck pour un évènement ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui ! Mariage, anniversaire, séminaire ou repas d'entreprise : on vient avec le food truck et on compose les bowls sur place. Appelle-nous pour un devis."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FoodEstablishment",
+  "name": "Le Poké Doré",
+  "description": "Food truck de poké bowls frais et faits maison.",
+  "telephone": "+33769472309",
+  "servesCuisine": "Poké bowl",
+  "priceRange": "€€",
+  "aggregateRating": {"@type": "AggregateRating","ratingValue": "4.7","reviewCount": "52"},
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"],"opens": "11:00","closes": "14:00"}
+  ]
+}
+</script>
+
+<script>
+  // Planning / Carte : petit carrousel à deux volets, flèches, swipe.
+  (() => {
+    const plan = document.querySelector('[data-plan]'); if (!plan) return;
+    const panels = plan.querySelector('.plan__panels'); const n = panels.children.length;
+    const dots = [...plan.querySelectorAll('.plan__dots span')];
+    let p = 0;
+    const go = k => { p = (k + n) % n; panels.style.setProperty('--p', p); dots.forEach((d, i) => d.classList.toggle('is-active', i === p)); };
+    plan.querySelector('[data-plan-prev]').addEventListener('click', () => go(p - 1));
+    plan.querySelector('[data-plan-next]').addEventListener('click', () => go(p + 1));
+    // la hauteur du bloc = celle du planning, la carte défile à l'intérieur
+    const first = panels.children[0];
+    const fit = () => { plan.style.setProperty('--plan-h', first.scrollHeight + 'px'); };
+    fit(); addEventListener('resize', fit); if (document.fonts) document.fonts.ready.then(fit);
+    let x0 = null, xl = null;
+    panels.addEventListener('touchstart', e => { x0 = xl = e.touches[0].clientX; }, { passive: true });
+    panels.addEventListener('touchmove', e => { xl = e.touches[0].clientX; }, { passive: true });
+    panels.addEventListener('touchend', () => { if (x0 !== null && Math.abs(xl - x0) > 35) go(p + (xl < x0 ? 1 : -1)); x0 = null; }, { passive: true });
+  })();
+
+  document.querySelectorAll('[data-year]').forEach(e => e.textContent = new Date().getFullYear());
+  // Met en avant le jour courant dans le planning.
+  (() => {
+    const d = new Date().getDay();
+    document.querySelectorAll('[data-plan] .plan__row').forEach(r => r.classList.toggle('is-today', +r.dataset.day === d));
+  })();
+</script>
+
+<script>
+  // Carrousel en boucle infinie : on duplique le premier et le dernier bowl aux extrémités,
+  // et quand on arrive sur une copie, on saute sans animation sur l'original.
+  const initCarousel = (root) => {
+    const track = root.querySelector('.carousel__track');
+    const real = [...track.querySelectorAll('.slide')];
+    const n = real.length;
+    const dotsBox = root.querySelector('.carousel__dots');
+
+    const firstClone = real[0].cloneNode(true), lastClone = real[n - 1].cloneNode(true);
+    firstClone.classList.add('is-clone'); lastClone.classList.add('is-clone');
+    track.appendChild(firstClone); track.insertBefore(lastClone, real[0]);
+    const all = [...track.querySelectorAll('.slide')];   // [cloneLast, s1..sn, cloneFirst]
+
+    let pos = 1, busy = false;
+    const realIndex = () => (pos - 1 + n) % n;
+
+    const dots = real.map((_, k) => {
+      const b = document.createElement('button');
+      b.className = 'carousel__dot'; b.type = 'button'; b.setAttribute('aria-label', 'Bowl ' + (k + 1));
+      b.addEventListener('click', () => goTo(k)); dotsBox.appendChild(b); return b;
+    });
+
+    const paint = () => {
+      track.style.setProperty('--i', pos);
+      all.forEach((s, k) => s.classList.toggle('is-active', k === pos));
+      dots.forEach((d, k) => d.classList.toggle('is-active', k === realIndex()));
+    };
+    const jumpTo = (p) => {            // saut instantané, sans transition
+      track.classList.add('is-jumping'); pos = p; paint();
+      void track.offsetWidth;            // force le rendu
+      track.classList.remove('is-jumping');
+    };
+    const move = (dir) => {
+      if (busy) return; busy = true;
+      pos += dir; paint();
+    };
+    track.addEventListener('transitionend', e => {
+      if (e.target !== track) return;
+      busy = false;
+      if (pos === 0) jumpTo(n);
+      else if (pos === n + 1) jumpTo(1);
+    });
+    const goTo = (k) => { if (busy) return; busy = true; pos = k + 1; paint(); };
+
+    root.querySelector('[data-prev]').addEventListener('click', () => move(-1));
+    root.querySelector('[data-next]').addEventListener('click', () => move(1));
+    root.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') move(-1); if (e.key === 'ArrowRight') move(1); });
+
+    // swipe tactile : on suit le doigt (pointermove) et on tranche au relâchement,
+    // y compris si le navigateur annule le geste (pointercancel) pour scroller la page.
+    let x0 = null, xLast = null, y0 = null, swiped = false;
+    const start = e => { x0 = xLast = e.clientX; y0 = e.clientY; swiped = false; };
+    const moveX = e => { if (x0 !== null) xLast = e.clientX; };
+    const finish = () => {
+      if (x0 === null) return;
+      const dx = xLast - x0; x0 = null;
+      if (Math.abs(dx) > 35) { swiped = true; move(dx < 0 ? 1 : -1); }
+    };
+    track.addEventListener('pointerdown', start, { passive: true });
+    track.addEventListener('pointermove', moveX, { passive: true });
+    track.addEventListener('pointerup', finish);
+    track.addEventListener('pointercancel', finish);
+    // secours pour les navigateurs qui n'envoient pas pointermove pendant un geste tactile
+    track.addEventListener('touchstart', e => start(e.touches[0]), { passive: true });
+    track.addEventListener('touchmove', e => moveX(e.touches[0]), { passive: true });
+    track.addEventListener('touchend', finish, { passive: true });
+    // pas de glisser natif des images
+    track.querySelectorAll('img').forEach(img => { img.draggable = false; });
+
+    // clic sur un bowl voisin
+    all.forEach((s, k) => s.addEventListener('click', e => {
+      if (swiped) { e.preventDefault(); swiped = false; return; }   // un swipe n'est pas un clic
+      if (k !== pos) { e.preventDefault(); move(k > pos ? 1 : -1); }
+    }));
+
+    jumpTo(1);
+    return { reset: () => jumpTo(1) };
+  };
+  // les noms longs (ex. « Champignons ») passent en taille réduite pour ne pas écraser l'image
+  document.querySelectorAll('.slide__name .l2').forEach(el => { if (el.textContent.trim().length > 7) el.classList.add('is-long'); });
+  const carousels = {};
+  document.querySelectorAll('[data-carousel]').forEach(c => { carousels[c.id] = initCarousel(c); });
+
+  // Onglets Poké bowls / Soupes
+  document.querySelectorAll('.tab[data-tab]').forEach(btn => btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab[data-tab]').forEach(b => { const on = b === btn; b.classList.toggle('is-active', on); b.setAttribute('aria-selected', on); });
+    document.querySelectorAll('[data-carousel]').forEach(c => { c.hidden = c.id !== btn.dataset.tab; });
+    carousels[btn.dataset.tab]?.reset();
+    document.getElementById('bowls').dataset.active = btn.dataset.tab;
+  }));
+</script>
+
+<!-- Chef "Appel nous" : sticker fixe à droite, cliquable -->
+<a class="chef-call" href="tel:+33769472309" aria-label="Appeler Le Poké Doré au 07 69 47 23 09">
+  <img src="image/chefcontact-cut.webp" alt="" width="600" height="590" loading="lazy" decoding="async">
+</a>
+
+<script>
+  // Vidéo de fond au ralenti (0.65). Si le .mp4 n'existe pas, l'image reste affichée.
+  const v = document.querySelector('.hero__video');
+  if (v) {
+    const SPEED = 0.65;
+    const apply = () => { v.playbackRate = SPEED; v.defaultPlaybackRate = SPEED; };
+    v.addEventListener('loadedmetadata', apply);
+    v.addEventListener('play', apply);
+    v.addEventListener('canplay', () => v.classList.add('is-ready'));
+    v.addEventListener('error', () => v.remove(), { once: true });
+    apply();
+  }
+</script>
+
+</body>
+</html>

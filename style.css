@@ -1,0 +1,76 @@
+/* ===== Le Poké Doré – styles communs ===== */
+:root{
+  --navy:#0d1f8c;
+  --navy-deep:#061250;
+  --yellow:#f4c430;
+  --cream:#fbf5e4;
+  --ink:#121212;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--cream);color:var(--ink);font-family:"Rubik",sans-serif}
+img,video{max-width:100%}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:relative;z-index:3;
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:start;
+  padding:clamp(18px,3vw,36px) clamp(16px,4vw,56px) 0;
+  gap:16px;
+}
+.nav__links{display:contents}
+.nav__group{display:flex;gap:10px;flex-wrap:wrap;padding-top:14px}
+.nav__group--right{justify-content:flex-end}
+.pill{
+  font:600 .78rem/1 "Rubik",sans-serif;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--cream);text-decoration:none;
+  padding:14px 20px;border-radius:999px;
+  border:1.5px solid rgba(251,245,228,.55);
+  background:rgba(6,18,80,.25);backdrop-filter:blur(6px);
+  transition:background .25s,color .25s,transform .25s;
+}
+@media (hover:hover){.pill:hover{background:var(--cream);color:var(--navy);transform:translateY(-2px)}}
+.nav__logo{display:block;width:clamp(170px,22vw,330px)}
+.nav__logo img{width:100%;height:auto;display:block}
+
+/* nav sur fond clair (pages intérieures) */
+.nav--light .pill{
+  color:var(--navy);background:transparent;backdrop-filter:none;
+  border-color:rgba(13,31,140,.35);
+}
+.nav--light .pill.is-active{background:var(--navy);color:var(--cream)}
+@media (hover:hover){.nav--light .pill:hover{background:var(--navy);color:var(--cream)}}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(24px);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+.nav .reveal{animation-delay:.1s}
+.nav__logo.reveal{animation-delay:.25s;transform:translateY(-24px)}
+@keyframes up{to{opacity:1;transform:none}}
+
+@media (max-width:760px){
+  .nav{display:flex;flex-direction:column;align-items:center;gap:8px;padding-top:14px}
+  .nav__group{display:contents}
+  .nav__links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;width:100%}
+  .nav__logo{order:2;flex:0 0 100%;width:100%;margin-top:14px}
+  .nav__logo img{width:min(60vw,220px);margin:0 auto}
+  .pill{padding:11px 13px;font-size:.66rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .reveal{animation:none;opacity:1;transform:none}
+}
+
+/* ---------- Chef "Appel nous" : sticker fixe qui sort du bord droit ---------- */
+.chef-call{
+  position:fixed;right:0;bottom:18px;z-index:50;
+  width:clamp(120px,15vw,230px);display:block;
+  transform:translateX(105%);
+  animation:chefin 1s cubic-bezier(.2,.9,.3,1.2) 1.6s forwards;
+  filter:drop-shadow(0 14px 22px rgba(6,18,80,.3));
+  transition:transform .3s cubic-bezier(.2,.8,.2,1);
+}
+.chef-call img{width:100%;height:auto;display:block;animation:chefbob 4s ease-in-out infinite 2.6s}
+@keyframes chefin{to{transform:translateX(8%)}}
+@keyframes chefbob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-6px) rotate(-2deg)}}
+@media (hover:hover){.chef-call:hover{transform:translateX(0) scale(1.06) !important;animation-play-state:paused}}
+.chef-call:active{transform:translateX(0) scale(.98) !important}
+@media (max-width:760px){.chef-call{width:112px;bottom:10px}}
+@media (prefers-reduced-motion:reduce){.chef-call{animation:none;transform:translateX(8%)}.chef-call img{animation:none}}

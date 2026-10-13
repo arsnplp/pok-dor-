@@ -1,0 +1,7 @@
+.DS_Store
+.backup/
+.playwright-mcp/
+image/*.png
+image/*.mov
+image/avocat.html
+image/avocat_files/

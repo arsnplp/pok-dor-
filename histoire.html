@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notre histoire – Le Poké Doré, food truck à Marignane</title>
+  <meta name="description" content="Du Poké d'Auré au Poké Doré : l'histoire d'un food truck de poké bowls frais et faits maison, à Marignane.">
+  <link rel="canonical" href="https://www.lepokedore.fr/histoire.html">
+  <meta name="theme-color" content="#0d1f8c">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Le Poké Doré">
+  <meta property="og:title" content="Notre histoire – Le Poké Doré, food truck à Marignane">
+  <meta property="og:description" content="Du Poké d'Auré au Poké Doré : l'histoire d'un food truck de poké bowls frais et faits maison, à Marignane.">
+  <meta property="og:url" content="https://www.lepokedore.fr/histoire.html">
+  <meta property="og:image" content="https://www.lepokedore.fr/image/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Notre histoire – Le Poké Doré, food truck à Marignane">
+  <meta name="twitter:description" content="Du Poké d'Auré au Poké Doré : l'histoire d'un food truck de poké bowls frais et faits maison, à Marignane.">
+  <meta name="twitter:image" content="https://www.lepokedore.fr/image/og-image.jpg">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Caveat:wght@700&family=Rubik:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=2">
+  <style>
+    .story{position:relative;overflow:hidden;padding-bottom:0}
+
+    .story__title{
+      position:relative;z-index:1;
+      font-family:"Bowlby One SC",cursive;font-weight:400;
+      color:var(--navy);text-align:center;text-transform:uppercase;
+      font-size:clamp(2.6rem,8.4vw,8rem);line-height:.95;white-space:nowrap;letter-spacing:.005em;
+      margin:clamp(28px,5vw,70px) 16px clamp(28px,5vw,70px);
+      animation-delay:.4s;
+    }
+
+    .story__visual{position:relative;z-index:1;width:min(80vw,1300px);margin:0 auto}
+    .story__visual .story__figure{width:100%}
+    /* image « fenêtre » : la forme ondulée sert de masque, la photo glisse derrière au scroll */
+    .story__figure{
+      position:relative;z-index:1;
+      width:min(80vw,1300px);margin:0 auto;
+      aspect-ratio:1536/1024;overflow:hidden;
+      clip-path:url(#wave-window);-webkit-clip-path:url(#wave-window);
+      animation-delay:.6s;
+    }
+    .story__figure img{
+      position:absolute;left:-11%;top:-18%;width:122%;max-width:none;height:136%;object-fit:cover;display:block;
+      will-change:transform;
+    }
+    @media (max-width:760px){.story__visual{width:88vw}}
+
+    /* aliments qui volent autour du titre */
+    .food{
+      position:absolute;z-index:2;pointer-events:none;
+      height:auto;
+      filter:drop-shadow(0 14px 18px rgba(6,18,80,.22));
+      will-change:transform;
+      opacity:0;animation:foodin 1s cubic-bezier(.2,.8,.2,1) forwards;
+    }
+    .food__inner{display:block;width:100%;height:auto;animation:float 6s ease-in-out infinite}
+    @keyframes foodin{to{opacity:1}}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-16px) rotate(calc(var(--r,0deg) + 4deg))}}
+
+    .food--1{left:-2%;  top:38%;width:clamp(64px,8vw,135px);animation-delay:.5s}
+    .food--2{left:16%;  top:-3%;width:clamp(46px,5.2vw,88px);animation-delay:.9s}
+    .food--3{right:-3%; top:48%;width:clamp(80px,9.5vw,165px);animation-delay:.7s}
+    .food--4{right:18%; top:-4%;width:clamp(52px,6vw,104px);animation-delay:1.1s}
+    .food--5{left:9%;   bottom:-2%;width:clamp(46px,5.2vw,88px);animation-delay:1.3s}
+    .food--6{right:7%;  bottom:-1%;width:clamp(40px,4.5vw,76px);animation-delay:1.5s}
+    .food--1 .food__inner{--r:-14deg}
+    .food--2 .food__inner{--r:12deg;animation-delay:1.2s}
+    .food--3 .food__inner{--r:10deg;animation-delay:2.1s}
+    .food--4 .food__inner{--r:-20deg;animation-delay:.6s}
+    .food--5 .food__inner{--r:-25deg;animation-delay:1.7s}
+    .food--6 .food__inner{--r:28deg;animation-delay:2.5s}
+
+    /* phrase d'intro */
+    .intro{
+      position:relative;z-index:1;
+      max-width:980px;margin:clamp(56px,9vw,130px) auto 0;padding:0 24px;
+      text-align:center;
+      font:600 clamp(1.35rem,3.1vw,2.6rem)/1.25 "Rubik",sans-serif;
+      color:var(--navy);letter-spacing:-.01em;
+      animation-delay:.8s;
+    }
+    .intro strong{font-weight:600;color:#e3a400}
+    .intro .brand{font-family:"Bowlby One SC",cursive;font-weight:400;letter-spacing:.02em}
+
+    @media (max-width:760px){
+      .story__title{font-size:9vw;margin-top:28px;margin-bottom:28px}
+      .food{filter:drop-shadow(0 8px 10px rgba(6,18,80,.2))}
+      .food--1{left:-1%; right:auto;top:34%;width:48px}
+      .food--2{right:4%; left:auto; top:-2%;width:38px}
+      .food--3{right:-2%;left:auto; top:56%;width:56px}
+      .food--4{left:6%;  right:auto;top:-3%;width:40px}
+      .food--5,.food--6{display:none}
+    }
+    @media (prefers-reduced-motion:reduce){.food__inner{animation:none}.food{opacity:1;animation:none}}
+
+    /* ---------- L'histoire en deux temps ---------- */
+    .tale{position:relative;background:#fdf0c2;margin-top:clamp(56px,8vw,120px);padding:clamp(90px,12vw,170px) 0 clamp(70px,9vw,130px);color:var(--navy)}
+    .sec-wave{position:absolute;left:0;right:0;top:-1px;width:100%;height:clamp(40px,6vw,90px);display:block;pointer-events:none}
+    .sec-wave path{fill:var(--cream)}
+    .tale__row{
+      width:min(1200px,88vw);margin:0 auto;
+      display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,100px);align-items:center;
+    }
+    .tale__row + .tale__row{margin-top:clamp(70px,10vw,150px)}
+    .tale__row--flip .tale__media{order:2}
+    .tale__media{position:relative}
+    .tale__media img{width:100%;height:auto;display:block;border-radius:28px;box-shadow:0 30px 60px -30px rgba(6,18,80,.45)}
+    .tale__h{
+      font-family:"Bowlby One SC",cursive;font-weight:400;text-transform:uppercase;
+      font-size:clamp(1.9rem,4.2vw,3.6rem);line-height:.98;letter-spacing:.005em;
+    }
+    .tale__h .gold{color:#e3a400}
+    .tale__text{margin-top:1.4em;display:grid;gap:1em;font:500 clamp(1rem,1.25vw,1.15rem)/1.6 "Rubik",sans-serif}
+    .tale__text .hl{color:#c98f00;font-weight:600;text-decoration:underline;text-decoration-color:var(--yellow);text-underline-offset:3px}
+    .tale__punch{
+      margin-top:clamp(60px,8vw,120px);text-align:center;
+      font-family:"Bowlby One SC",cursive;font-weight:400;text-transform:uppercase;
+      font-size:clamp(1.6rem,4.2vw,3.6rem);line-height:1;letter-spacing:.01em;
+      transform:rotate(-2deg);
+    }
+    .tale__punch .gold{color:#e3a400}
+    @media (max-width:860px){
+      .tale__row{grid-template-columns:1fr}
+      .tale__row--flip .tale__media{order:0}
+      .tale__media{max-width:520px;margin:0 auto}
+    }
+
+    /* ---------- FOOTER ---------- */
+    .footer{--prev-bg:var(--cream);position:relative;background:var(--navy);color:var(--cream);padding:clamp(90px,12vw,170px) 0 28px}
+    .footer__grid{width:min(1200px,88vw);margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(28px,4vw,60px)}
+    .footer__logo{width:200px;height:auto;display:block;filter:brightness(0) invert(.96) sepia(.35) saturate(.6)}
+    .footer__brand p{margin:18px 0 0;max-width:34ch;font:500 .98rem/1.55 "Rubik",sans-serif;color:rgba(251,245,228,.8)}
+    .footer__social{display:flex;gap:10px;margin-top:18px}
+    .footer__social a{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;border:1.5px solid rgba(251,245,228,.4);color:var(--cream);transition:background .25s,color .25s}
+    .footer__social a:hover{background:var(--yellow);color:var(--navy);border-color:var(--yellow)}
+    .footer__social svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .footer__col h3{font:700 1.15rem "Caveat",cursive;letter-spacing:.08em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px}
+    .footer__col ul{list-style:none}
+    .footer__col li{display:flex;justify-content:space-between;gap:12px;padding:6px 0;font:500 .95rem/1.4 "Rubik",sans-serif;color:rgba(251,245,228,.85)}
+    .footer__col a{color:inherit;text-decoration:none;border-bottom:1.5px solid transparent;transition:border-color .25s,color .25s}
+    .footer__col a:hover{color:var(--yellow);border-color:var(--yellow)}
+    .footer__note{font-size:.82rem;color:rgba(251,245,228,.6)}
+    .footer__bottom{width:min(1200px,88vw);margin:40px auto 0;padding-top:18px;border-top:1px solid rgba(251,245,228,.18);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:500 .82rem "Rubik",sans-serif;color:rgba(251,245,228,.6)}
+    .footer__bottom a{color:inherit}
+    .footer__links a{text-decoration:none;border-bottom:1px solid rgba(251,245,228,.35)}
+    .footer__links a:hover{color:var(--yellow);border-color:var(--yellow)}
+
+    @media (max-width:900px){.footer__grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:640px){.footer__grid{grid-template-columns:1fr}.footer__col li{justify-content:flex-start}}
+    .footer .sec-wave path{fill:#fdf0c2}
+  </style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <clipPath id="wave-window" clipPathUnits="objectBoundingBox">
+      <path d="M0.07,0.035 C0.22,0.005 0.42,0.05 0.6,0.025 C0.76,0.005 0.88,0.04 0.94,0.025 C0.975,0.015 1,0.04 1,0.09 C0.995,0.35 1.006,0.62 1,0.9 C1,0.95 0.98,0.985 0.935,0.978 C0.78,0.955 0.6,1 0.42,0.972 C0.25,0.948 0.12,0.995 0.055,0.98 C0.015,0.97 0,0.94 0,0.9 C0.006,0.65 -0.004,0.38 0,0.1 C0,0.06 0.025,0.04 0.07,0.035 Z"/>
+    </clipPath>
+  </defs>
+</svg>
+
+<main class="story">
+  <nav class="nav nav--light" aria-label="Navigation principale">
+    <div class="nav__links">
+    <div class="nav__group reveal">
+      <a class="pill" href="index.html#bowls">Nos poké bowls</a>
+      <a class="pill is-active" href="histoire.html">Notre histoire</a>
+    </div>
+    <a class="nav__logo reveal" href="index.html" aria-label="Le Poké Doré – accueil">
+      <img src="image/logo.webp" alt="Le Poké Doré" width="1400" height="700">
+    </a>
+    <div class="nav__group nav__group--right reveal">
+      <a class="pill" href="index.html#faq">FAQ</a>
+      <a class="pill" href="index.html#truck">Le food truck</a>
+    </div>
+    </div>
+  </nav>
+
+  <h1 class="story__title reveal">Notre histoire</h1>
+
+  <div class="story__visual">
+  <!-- aliments flottants (parallaxe au scroll via data-speed) -->
+  <div class="food food--1" data-speed="0.18"><img class="food__inner" src="image/saumon-cut.webp" alt="" width="700" height="667" loading="lazy" decoding="async"></div>
+  <div class="food food--2" data-speed="-0.10"><img class="food__inner" src="image/avocat-cut.webp" alt="" width="700" height="645" loading="lazy" decoding="async"></div>
+  <div class="food food--3" data-speed="0.12"><img class="food__inner" src="image/carotteraper-cut.webp" alt="" width="700" height="499" loading="lazy" decoding="async"></div>
+  <div class="food food--4" data-speed="-0.16"><img class="food__inner" src="image/avocat-cut.webp" alt="" width="700" height="645" loading="lazy" decoding="async"></div>
+  <div class="food food--5" data-speed="0.24"><img class="food__inner" src="image/carotteraper-cut.webp" alt="" width="700" height="499" loading="lazy" decoding="async"></div>
+  <div class="food food--6" data-speed="-0.08"><img class="food__inner" src="image/saumon-cut.webp" alt="" width="700" height="667" loading="lazy" decoding="async"></div>
+
+  <figure class="story__figure reveal">
+    <img class="story__photo" src="image/img1.webp" alt="Deux amis partagent un poké bowl devant le food truck Le Poké Doré" width="1400" height="933" loading="lazy" decoding="async">
+  </figure>
+  </div>
+
+  <p class="intro reveal">
+    <span class="brand">Le Poké Doré</span> c'est avant tout l'histoire d'une
+    <strong>famille</strong> qui aime les bons poké bowls bien <strong>frais</strong>,
+    préparés chaque jour dans notre <strong>food truck</strong> !
+  </p>
+
+  <section class="tale">
+    <svg class="sec-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,0 L1440,0 L1440,50 C1360,75 1260,25 1080,55 C880,90 720,25 520,60 C320,95 180,30 0,70 Z"/>
+    </svg>
+
+    <div class="tale__row">
+      <div class="tale__media">
+        <img src="image/histoire1.jpg" alt="Un poké bowl tenu à deux mains devant le sweat Le Poké d'Auré Food Truck" loading="lazy" width="1000" height="1000">
+      </div>
+      <div class="tale__info">
+        <h2 class="tale__h">Tout a commencé<br>avec <span class="gold">un bowl</span></h2>
+        <div class="tale__text">
+          <p><span class="hl">Un premier food truck, Le Poké d'Auré</span>, posé sur les parkings et les places de Marignane.</p>
+          <p>À l'époque, personne ne connaissait vraiment le poké bowl dans le coin. Alors on a fait simple : du saumon frais, des légumes de saison, une sauce maison, et on a laissé les clients goûter.</p>
+          <p>Très vite, les habitués reviennent, les collègues de bureau s'y mettent, et le bowl devient le rendez-vous du midi. On se rend compte qu'un repas rapide peut aussi être frais, sain et franchement bon.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tale__row tale__row--flip">
+      <div class="tale__media">
+        <img src="image/histoire2.jpg" alt="Lucas tend une citronnade maison depuis le comptoir du food truck" loading="lazy" width="1000" height="1000">
+      </div>
+      <div class="tale__info">
+        <h2 class="tale__h">Puis Lucas a repris<br><span class="gold">le volant</span></h2>
+        <div class="tale__text">
+          <p>Même truck, même exigence sur les produits, mais une envie d'aller plus loin : <span class="hl">tout faire maison</span>, des marinades aux desserts, en passant par la citronnade que les clients réclament.</p>
+          <p>Chaque matin, on découpe, on marine, on prépare. Chaque midi, on compose les bowls sous tes yeux, avec le sourire et un conseil si tu hésites.</p>
+          <p>Et quand les pompiers de Rognac ont passé la nuit sur le feu de forêt, le food truck est venu leur servir à manger. Parce que nourrir les gens, c'est aussi ça.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="tale__punch">Le Poké Doré, <span class="gold">c'est né comme ça !</span></p>
+  </section>
+</main>
+
+<footer class="footer">
+  <svg class="sec-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,0 L1440,0 L1440,50 C1360,75 1260,25 1080,55 C880,90 720,25 520,60 C320,95 180,30 0,70 Z"/>
+  </svg>
+  <div class="footer__grid">
+    <div class="footer__brand">
+      <img class="footer__logo" src="image/logo.webp" alt="Le Poké Doré" width="1400" height="700">
+      <p>Food truck de poké bowls frais et faits maison, à Marignane et autour de l'étang de Berre.</p>
+      <div class="footer__social">
+        <a href="https://www.instagram.com/lepokedore" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.google.com/maps/place/Le+Pok%C3%A9+d'Aur%C3%A9+Food+Truck/@43.3385466,5.1664519,17z/data=!4m8!3m7!1s0x12c9ed8f44db07c1:0x1dd109c5d7c57777!8m2!3d43.3385466!4d5.1664519!9m1!1b1!16s%2Fg%2F11h8j5_dvd" target="_blank" rel="noopener" aria-label="Fiche Google"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h3>Horaires</h3>
+      <ul>
+        <li><span>Lundi – Jeudi</span><span>11h00 – 14h00</span></li>
+        <li><span>Vendredi – Dimanche</span><span>Fermé</span></li>
+        <li class="footer__note">Évènements le week-end, voir Instagram</li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h3>Le site</h3>
+      <ul>
+        <li><a href="index.html#bowls">Nos poké bowls</a></li>
+        <li><a href="histoire.html">Notre histoire</a></li>
+        <li><a href="index.html#truck">Où nous trouver</a></li>
+        <li><a href="index.html#avis">Avis clients</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h3>Contact</h3>
+      <ul>
+        <li><a href="tel:+33769472309">07 69 47 23 09</a></li>
+        <li><a href="https://www.instagram.com/lepokedore" target="_blank" rel="noopener">@lepokedore</a></li>
+        <li>Marignane (13)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© <span data-year>2026</span> Le Poké Doré · Tous droits réservés</span>
+    <span class="footer__links"><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · <a href="https://acco-lab.fr" target="_blank" rel="noopener">Fait par Acco-lab</a></span>
+  </div>
+</footer>
+
+<!-- Chef "Appel nous" : sticker fixe à droite, cliquable -->
+<a class="chef-call" href="tel:+33769472309" aria-label="Appeler Le Poké Doré au 07 69 47 23 09">
+  <img src="image/chefcontact-cut.webp" alt="" width="600" height="590" loading="lazy" decoding="async">
+</a>
+
+<script>
+  document.querySelectorAll('[data-year]').forEach(e => e.textContent = new Date().getFullYear());
+  // Les aliments bougent légèrement au scroll (parallaxe), chacun à sa vitesse.
+  (() => {
+    const items = [...document.querySelectorAll('.food[data-speed]')];
+    if (!items.length || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let ticking = false;
+    const limit = () => (document.querySelector('.story__figure')?.offsetHeight || 600) * 0.5;
+    const update = () => {
+      const y = Math.min(window.scrollY, limit());
+      for (const el of items) {
+        const sp = parseFloat(el.dataset.speed) || 0;
+        el.style.transform = `translate3d(0, ${(-y * sp).toFixed(1)}px, 0)`;
+      }
+      ticking = false;
+    };
+    addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(update); ticking = true; } }, { passive: true });
+    update();
+  })();
+
+  // Effet fenêtre : la photo glisse doucement derrière la découpe pendant le scroll.
+  (() => {
+    const fig = document.querySelector('.story__figure'), img = document.querySelector('.story__photo');
+    if (!fig || !img || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let t = false;
+    const upd = () => {
+      const r = fig.getBoundingClientRect();
+      const p = (r.top + r.height / 2 - innerHeight / 2) / innerHeight;   // -1 .. 1
+      img.style.transform = `translate3d(0, ${(p * -10).toFixed(2)}%, 0)`;
+      t = false;
+    };
+    addEventListener('scroll', () => { if (!t) { requestAnimationFrame(upd); t = true; } }, { passive: true });
+    addEventListener('resize', upd); upd();
+  })();
+</script>
+
+</body>
+</html>
