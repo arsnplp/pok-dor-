@@ -231,10 +231,11 @@
       .slide{grid-template-columns:1fr;text-align:center;gap:6px}
       .slide__body{padding:0 8px}
       .slide__text{margin:1em auto 0}
-      .saveurs .food--a,.saveurs .food--c{display:none}
+      .saveurs .food--a{left:3%;top:1.5%;width:50px}
+      .saveurs .food--c{left:4%;bottom:3%;width:46px}
       .tabs{padding:4px;gap:4px}
       .tab{padding:11px 14px;font-size:.72rem}
-      .saveurs .food--b{top:6%;right:3%;width:52px}
+      .saveurs .food--b{top:4%;right:3%;width:54px}
     }
 
     /* ---------- OÙ NOUS TROUVER ---------- */
@@ -354,6 +355,19 @@
       .map{left:6%;width:74%}
       .truck{left:-6%;width:100%}
     }
+
+    /* ---------- Pop-up carte ---------- */
+    .lightbox{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100vw;height:100vh;
+      display:none;align-items:center;justify-content:center;overscroll-behavior:contain}
+    .lightbox[open]{display:flex}
+    .lightbox::backdrop{background:rgba(6,18,80,.78);backdrop-filter:blur(4px)}
+    .lightbox img{max-width:min(92vw,720px);max-height:88vh;width:auto;height:auto;border-radius:18px;
+      box-shadow:0 40px 80px rgba(0,0,0,.45);animation:lbin .35s cubic-bezier(.2,.8,.2,1)}
+    @keyframes lbin{from{opacity:0;transform:scale(.94) translateY(12px)}to{opacity:1;transform:none}}
+    .lightbox__close{position:fixed;top:14px;right:14px;width:48px;height:48px;border-radius:50%;border:0;cursor:pointer;
+      background:var(--yellow);color:var(--navy);display:grid;place-items:center;box-shadow:0 6px 0 var(--navy-deep);z-index:2}
+    .lightbox__close svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round}
+    body.has-lightbox{overflow:hidden}
 
     /* ---------- AVIS : mur de cartes en perspective ---------- */
     .avis{position:relative;overflow:hidden;padding:clamp(56px,8vw,110px) 0 0;color:var(--navy)}
@@ -820,10 +834,10 @@
                 <span class="plan__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM8 9h8M8 13h8M8 17h5"/></svg></span>
                 <h3 class="plan__title">Notre carte</h3>
               </div>
-              <a class="plan__carte" href="image/carte.png" target="_blank" rel="noopener" aria-label="Ouvrir la carte en grand">
+              <a class="plan__carte" href="image/carte.webp" target="_blank" rel="noopener" aria-label="Ouvrir la carte en grand" data-open-carte>
                 <img src="image/carte.webp" alt="La carte du Poké Doré : composition des pokés, tarifs des bowls, boissons, desserts et formules" loading="lazy" width="1024" height="1536">
               </a>
-              <p class="plan__hint">Fais défiler la carte · clique pour l'ouvrir en grand</p>
+              <p class="plan__hint">Clique sur la carte pour l'ouvrir en grand</p>
             </div>
           </div>
         </div>
@@ -1407,6 +1421,17 @@
   })();
 
   document.querySelectorAll('[data-year]').forEach(e => e.textContent = new Date().getFullYear());
+  // Pop-up carte : clic sur la carte -> plein écran, fermeture par croix, clic à côté ou Échap.
+  document.addEventListener('DOMContentLoaded', () => {
+    const dlg = document.getElementById('carte-lightbox'); if (!dlg || !dlg.showModal) return;
+    const open = e => { e.preventDefault(); dlg.showModal(); document.body.classList.add('has-lightbox'); };
+    const close = () => { dlg.close(); };
+    document.querySelectorAll('[data-open-carte]').forEach(a => a.addEventListener('click', open));
+    dlg.querySelector('[data-close-carte]').addEventListener('click', close);
+    dlg.addEventListener('click', e => { if (e.target === dlg) close(); });
+    dlg.addEventListener('close', () => document.body.classList.remove('has-lightbox'));
+  });
+
   // Met en avant le jour courant dans le planning.
   (() => {
     const d = new Date().getDay();
@@ -1529,6 +1554,14 @@
     document.getElementById('bowls').dataset.active = btn.dataset.tab;
   }));
 </script>
+
+<!-- Pop-up : la carte en grand -->
+<dialog class="lightbox" id="carte-lightbox" aria-label="La carte du Poké Doré">
+  <button class="lightbox__close" type="button" data-close-carte aria-label="Fermer">
+    <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <img src="image/carte.webp" alt="La carte complète du Poké Doré : composition des pokés, tarifs, boissons, desserts et formules" width="1024" height="1536" loading="lazy" decoding="async">
+</dialog>
 
 <!-- Chef "Appel nous" : sticker fixe à droite, cliquable -->
 <a class="chef-call" href="tel:+33769472309" aria-label="Appeler Le Poké Doré au 07 69 47 23 09">
