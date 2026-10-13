@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page introuvable – Le Poké Doré</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0d1f8c">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Caveat:wght@700&family=Rubik:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=2">
+  <style>
+    .btn{
+      margin-top:clamp(28px,4vw,56px);
+      display:inline-block;text-decoration:none;
+      font:700 clamp(1.25rem,2.2vw,1.9rem)/1 "Caveat",cursive;letter-spacing:.06em;text-transform:uppercase;
+      color:var(--navy);background:var(--yellow);
+      padding:.95em 1.9em;border-radius:14px;
+      box-shadow:0 8px 0 var(--navy-deep);
+      transform:rotate(-1.5deg);
+      transition:transform .2s,box-shadow .2s;
+    }
+    .btn:hover{transform:rotate(-1.5deg) translateY(-3px);box-shadow:0 11px 0 var(--navy-deep)}
+    .btn:active{transform:rotate(-1.5deg) translateY(5px);box-shadow:0 3px 0 var(--navy-deep)}
+    .nf{min-height:100svh;display:flex;flex-direction:column;position:relative;overflow:hidden}
+    .nf__body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 16px 80px;color:var(--navy)}
+    .nf__code{
+      font-family:"Bowlby One SC",cursive;font-weight:400;line-height:.9;
+      font-size:clamp(6rem,24vw,16rem);letter-spacing:.02em;
+      color:var(--navy);text-shadow:.06em .06em 0 var(--yellow);
+      transform:rotate(-3deg);animation:drop .9s cubic-bezier(.2,.8,.2,1.2) both;
+    }
+    .nf__code .o{display:inline-block;width:.78em;height:.78em;vertical-align:-.04em;margin:0 .04em;position:relative}
+    .nf__code .o img{width:100%;height:100%;object-fit:contain;display:block;animation:spin 14s linear infinite}
+    .nf__title{margin-top:.3em;font-family:"Bowlby One SC",cursive;font-weight:400;text-transform:uppercase;font-size:clamp(1.4rem,3.6vw,2.6rem);line-height:1.05}
+    .nf__title .gold{color:#e3a400}
+    .nf__text{margin:.9em auto 0;max-width:40ch;font:600 clamp(1rem,1.4vw,1.2rem)/1.5 "Rubik",sans-serif}
+    .nf__actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:2em}
+    .nf .btn{margin-top:0;font-size:clamp(1.05rem,1.6vw,1.4rem)}
+    .nf .btn--ghost{background:transparent;color:var(--navy);box-shadow:none;border:2px solid var(--navy);transform:rotate(1.5deg)}
+    .nf .btn--ghost:hover{transform:rotate(1.5deg) translateY(-3px);box-shadow:none;background:var(--navy);color:var(--cream)}
+    .food{position:absolute;pointer-events:none;filter:drop-shadow(0 12px 14px rgba(6,18,80,.2))}
+    .food img{display:block;width:100%;height:auto;animation:float 6s ease-in-out infinite}
+    .food--a{left:6%;top:18%;width:clamp(56px,8vw,140px)} .food--a img{--r:-14deg}
+    .food--b{right:7%;top:14%;width:clamp(64px,9vw,160px)} .food--b img{--r:12deg;animation-delay:1.3s}
+    .food--c{left:12%;bottom:12%;width:clamp(60px,8vw,150px)} .food--c img{--r:22deg;animation-delay:2.2s}
+    .food--d{right:10%;bottom:16%;width:clamp(50px,7vw,120px)} .food--d img{--r:-20deg;animation-delay:.7s}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-14px) rotate(calc(var(--r,0deg) + 4deg))}}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes drop{from{opacity:0;transform:rotate(-3deg) translateY(-40px) scale(.9)}to{opacity:1;transform:rotate(-3deg)}}
+    @media (max-width:640px){.food--c,.food--d{display:none}}
+    @media (prefers-reduced-motion:reduce){.nf__code,.food img,.nf__code .o img{animation:none}}
+  </style>
+</head>
+<body>
+<main class="nf">
+  <nav class="nav nav--light" aria-label="Navigation principale">
+    <div class="nav__links">
+    <div class="nav__group reveal">
+      <a class="pill" href="index.html#bowls">Nos poké bowls</a>
+      <a class="pill" href="histoire.html">Notre histoire</a>
+    </div>
+    <a class="nav__logo reveal" href="index.html" aria-label="Le Poké Doré – accueil">
+      <img src="image/logo.webp" alt="Le Poké Doré" width="1400" height="700">
+    </a>
+    <div class="nav__group nav__group--right reveal">
+      <a class="pill" href="index.html#faq">FAQ</a>
+      <a class="pill" href="index.html#truck">Le food truck</a>
+    </div>
+    </div>
+  </nav>
+
+  <div class="food food--a"><img src="image/saumon-cut.webp" alt=""></div>
+  <div class="food food--b"><img src="image/avocat-cut.webp" alt=""></div>
+  <div class="food food--c"><img src="image/carotteraper-cut.webp" alt=""></div>
+  <div class="food food--d"><img src="image/framboise-cut.webp" alt=""></div>
+
+  <div class="nf__body">
+    <p class="nf__code" aria-label="Erreur 404">4<span class="o"><img src="image/bolesaumon-bowl.webp" alt=""></span>4</p>
+    <h1 class="nf__title">Oups, ce bowl <span class="gold">n'existe pas</span></h1>
+    <p class="nf__text">La page que tu cherches a dû partir avec le food truck. Reviens à l'accueil ou viens directement nous voir !</p>
+    <div class="nf__actions">
+      <a class="btn" href="index.html">Retour à l'accueil</a>
+      <a class="btn btn--ghost" href="index.html#truck">Où nous trouver</a>
+    </div>
+  </div>
+</main>
+</body>
+</html>
