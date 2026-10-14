@@ -491,10 +491,6 @@
     .ccard__hint{font:500 .92rem/1.4 "Rubik",sans-serif;color:rgba(13,31,140,.7);max-width:28ch}
 
     .insta{width:min(1200px,92vw);margin:clamp(40px,6vw,80px) auto 0;text-align:left}
-    .insta__consent{max-width:60ch;margin:0 auto;text-align:center;font:500 1rem/1.55 "Rubik",sans-serif;color:var(--navy)}
-    .insta__consent p{margin:0 0 18px}
-    .insta__consent a{color:var(--navy)}
-    .insta__consent .btn{margin:0 0 26px}
     .insta__title{font:700 clamp(1.3rem,2vw,1.8rem)/1 "Caveat",cursive;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);text-align:center;margin-bottom:22px}
 
     /* ---------- FOOTER ---------- */
@@ -1268,22 +1264,9 @@
 
   <div class="insta">
     <h3 class="insta__title">Suis-nous sur Instagram</h3>
-    <!-- Flux Instagram (Elfsight) chargé uniquement au clic : aucun traceur tiers avant l'action du visiteur -->
-    <div class="insta__consent" id="insta-consent">
-      <p>Le flux est fourni par Elfsight et Instagram (Meta), qui peuvent déposer des cookies et recevoir votre adresse IP.</p>
-      <button type="button" class="btn btn--small" id="insta-load">Afficher le flux Instagram</button>
-      <p><a href="https://www.instagram.com/lepokedore" target="_blank" rel="noopener">Ou voir @lepokedore directement sur Instagram</a></p>
-    </div>
-    <div class="elfsight-app-d1fc5022-7a91-4690-85da-1fb1a06c376f" data-elfsight-app-lazy></div>
-    <script>
-      document.getElementById('insta-load').addEventListener('click', function () {
-        var s = document.createElement('script');
-        s.src = 'https://elfsightcdn.com/platform.js';
-        s.async = true;
-        document.body.appendChild(s);
-        document.getElementById('insta-consent').remove();
-      });
-    </script>
+    <!-- Flux Instagram (Elfsight), affiché directement -->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div class="elfsight-app-d1fc5022-7a91-4690-85da-1fb1a06c376f"></div>
   </div>
 </section>
 
