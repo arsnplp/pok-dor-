@@ -24,10 +24,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Caveat:wght@700&family=Rubik:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
   <style>
 
     /* ---------- HERO ---------- */
@@ -135,7 +132,7 @@
     @keyframes tabin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
     .carousel__viewport{overflow:hidden;width:100%;touch-action:pan-y;-webkit-user-select:none;user-select:none}
     .carousel__track img{-webkit-user-drag:none;pointer-events:none}
-    .slide__price{margin-top:.9em;font-family:"Bowlby One SC",cursive;font-size:clamp(1.4rem,2.4vw,2.2rem);color:#e3a400;line-height:1}
+    .slide__price{margin-top:.9em;font-family:"Bowlby One SC",cursive;font-size:clamp(1.4rem,2.4vw,2.2rem);color:#b28100;line-height:1}
     .slide__btn{pointer-events:auto}
     .carousel__track{
       --w:min(1100px,84vw);--gap:clamp(16px,3vw,48px);
@@ -182,11 +179,11 @@
       font-family:"Bowlby One SC",cursive;font-weight:400;text-transform:uppercase;
       font-size:clamp(2.2rem,5.6vw,5.4rem);line-height:.92;letter-spacing:.005em;
     }
-    .slide__name .l1{display:block;color:#e3a400}
+    .slide__name .l1{display:block;color:#b28100}
     .slide__name .l2{display:block;color:var(--navy)}
     .slide__name .l2.is-long{font-size:.72em}
     .slide__text{margin-top:1.2em;max-width:34ch;font:600 clamp(.95rem,1.25vw,1.15rem)/1.5 "Rubik",sans-serif;color:var(--navy)}
-    .slide__price{margin-top:.9em;font-family:"Bowlby One SC",cursive;font-size:clamp(1.4rem,2.4vw,2.2rem);color:#e3a400;line-height:1}
+    .slide__price{margin-top:.9em;font-family:"Bowlby One SC",cursive;font-size:clamp(1.4rem,2.4vw,2.2rem);color:#b28100;line-height:1}
     .slide__btn{
       margin-top:1.6em;display:inline-block;text-decoration:none;
       font:700 clamp(1.05rem,1.6vw,1.4rem)/1 "Caveat",cursive;letter-spacing:.06em;text-transform:uppercase;
@@ -249,7 +246,7 @@
       font-size:clamp(2.4rem,5.4vw,5rem);line-height:.95;letter-spacing:.005em;position:relative;
       transform:rotate(-3deg);transform-origin:left bottom;width:fit-content;
     }
-    .where__title .gold{color:#e3a400;display:inline-block;transform:translateX(.35em)}
+    .where__title .gold{color:#b28100;display:inline-block;transform:translateX(.35em)}
     .where__title .spark{position:absolute;width:.5em;height:.5em;fill:none;stroke:var(--navy);stroke-width:2.4;stroke-linecap:round}
     .where__title .spark--l{left:-.55em;top:.1em}
     .where__title .spark--r{right:-.5em;top:.7em;transform:scaleX(-1)}
@@ -297,7 +294,7 @@
     .plan__place{display:flex;align-items:center;gap:7px}
     .plan__place svg{width:15px;height:15px;flex:none;fill:var(--navy)}
     .plan__time{white-space:nowrap;font-weight:600;font-variant-numeric:tabular-nums}
-    .plan__row.is-closed{opacity:.5}
+    .plan__row.is-closed{opacity:.72}
     .plan__row.is-today .plan__day{background:var(--navy);color:var(--cream)}
 
     /* côté droit : carte + truck */
@@ -387,7 +384,7 @@
     }
     .score:hover{transform:translateY(-3px);box-shadow:0 24px 50px rgba(6,18,80,.14)}
     .score__note{font-family:"Bowlby One SC",cursive;font-size:56px;line-height:.9;color:var(--navy)}
-    .score__note small{font-size:20px;color:#e3a400;margin-left:2px}
+    .score__note small{font-size:20px;color:#966c00;margin-left:2px}
     .score__detail{display:flex;flex-direction:column;gap:3px;font:500 15px/1.3 "Rubik",sans-serif}
     .score__detail .stars{font-size:18px;letter-spacing:.08em}
     .score__detail strong{font-weight:600;font-size:17px}
@@ -454,7 +451,7 @@
     .faq{--sec-bg:#fdf0c2;--prev-bg:var(--cream);position:relative;background:var(--sec-bg);padding:clamp(90px,12vw,170px) 0 clamp(56px,7vw,100px);color:var(--navy)}
     .faq__grid{width:min(1200px,88vw);margin:0 auto;display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,5vw,80px);align-items:start}
     .faq__title{font-family:"Bowlby One SC",cursive;font-weight:400;text-transform:uppercase;font-size:clamp(2.2rem,4.8vw,4.4rem);line-height:.95;transform:rotate(-2deg);transform-origin:left bottom;width:fit-content}
-    .faq__title .gold{color:#e3a400}
+    .faq__title .gold{color:#b28100}
     .faq__sub{margin:1.4em 0 1.6em;max-width:32ch;font:500 clamp(1rem,1.3vw,1.2rem)/1.5 "Rubik",sans-serif}
     .btn--small{margin-top:0;font-size:clamp(1rem,1.4vw,1.25rem);padding:.85em 1.4em;box-shadow:0 6px 0 var(--navy-deep)}
     .faq__item{border-bottom:1.5px solid rgba(13,31,140,.18)}
@@ -464,7 +461,7 @@
       padding:20px 0;font:600 clamp(1.05rem,1.5vw,1.3rem)/1.3 "Rubik",sans-serif;transition:color .25s;
     }
     .faq__item summary::-webkit-details-marker{display:none}
-    .faq__item summary:hover{color:#c98f00}
+    .faq__item summary:hover{color:#8d6500}
     .faq__item summary i{position:relative;width:34px;height:34px;flex:none;border-radius:50%;border:1.5px solid rgba(13,31,140,.35);transition:background .3s,transform .5s cubic-bezier(.2,.8,.2,1)}
     .faq__item summary i::before,.faq__item summary i::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2px;background:currentColor;transform:translate(-50%,-50%)}
     .faq__item summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
@@ -494,6 +491,10 @@
     .ccard__hint{font:500 .92rem/1.4 "Rubik",sans-serif;color:rgba(13,31,140,.7);max-width:28ch}
 
     .insta{width:min(1200px,92vw);margin:clamp(40px,6vw,80px) auto 0;text-align:left}
+    .insta__consent{max-width:60ch;margin:0 auto;text-align:center;font:500 1rem/1.55 "Rubik",sans-serif;color:var(--navy)}
+    .insta__consent p{margin:0 0 18px}
+    .insta__consent a{color:var(--navy)}
+    .insta__consent .btn{margin:0 0 26px}
     .insta__title{font:700 clamp(1.3rem,2vw,1.8rem)/1 "Caveat",cursive;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);text-align:center;margin-bottom:22px}
 
     /* ---------- FOOTER ---------- */
@@ -654,7 +655,7 @@
       <button class="carousel__arrow" type="button" data-prev aria-label="Bowl précédent">
         <svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
       </button>
-      <div class="carousel__dots" role="tablist" aria-label="Choisir un bowl"></div>
+      <div class="carousel__dots" role="group" aria-label="Choisir un bowl"></div>
       <button class="carousel__arrow" type="button" data-next aria-label="Bowl suivant">
         <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </button>
@@ -709,7 +710,7 @@
       <button class="carousel__arrow" type="button" data-prev aria-label="Soupe précédente">
         <svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
       </button>
-      <div class="carousel__dots" role="tablist" aria-label="Choisir une soupe"></div>
+      <div class="carousel__dots" role="group" aria-label="Choisir une soupe"></div>
       <button class="carousel__arrow" type="button" data-next aria-label="Soupe suivante">
         <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </button>
@@ -783,7 +784,7 @@
       <button class="carousel__arrow" type="button" data-prev aria-label="Dessert précédent">
         <svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
       </button>
-      <div class="carousel__dots" role="tablist" aria-label="Choisir un dessert"></div>
+      <div class="carousel__dots" role="group" aria-label="Choisir un dessert"></div>
       <button class="carousel__arrow" type="button" data-next aria-label="Dessert suivant">
         <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </button>
@@ -1267,9 +1268,22 @@
 
   <div class="insta">
     <h3 class="insta__title">Suis-nous sur Instagram</h3>
-    <!-- Elfsight Instagram Feed -->
-    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <!-- Flux Instagram (Elfsight) chargé uniquement au clic : aucun traceur tiers avant l'action du visiteur -->
+    <div class="insta__consent" id="insta-consent">
+      <p>Le flux est fourni par Elfsight et Instagram (Meta), qui peuvent déposer des cookies et recevoir votre adresse IP.</p>
+      <button type="button" class="btn btn--small" id="insta-load">Afficher le flux Instagram</button>
+      <p><a href="https://www.instagram.com/lepokedore" target="_blank" rel="noopener">Ou voir @lepokedore directement sur Instagram</a></p>
+    </div>
     <div class="elfsight-app-d1fc5022-7a91-4690-85da-1fb1a06c376f" data-elfsight-app-lazy></div>
+    <script>
+      document.getElementById('insta-load').addEventListener('click', function () {
+        var s = document.createElement('script');
+        s.src = 'https://elfsightcdn.com/platform.js';
+        s.async = true;
+        document.body.appendChild(s);
+        document.getElementById('insta-consent').remove();
+      });
+    </script>
   </div>
 </section>
 
@@ -1315,7 +1329,7 @@
   </div>
   <div class="footer__bottom">
     <span>© <span data-year>2026</span> Le Poké Doré · Tous droits réservés</span>
-    <span class="footer__links"><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · <a href="https://acco-lab.fr" target="_blank" rel="noopener">Fait par Acco-lab</a></span>
+    <span class="footer__links"><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · <a href="cgu.html">CGU</a> · <a href="https://acco-lab.fr" target="_blank" rel="noopener">Fait par Acco-lab</a></span>
   </div>
 </footer>
 
@@ -1465,7 +1479,7 @@
     const paint = () => {
       track.style.setProperty('--i', pos);
       all.forEach((s, k) => s.classList.toggle('is-active', k === pos));
-      dots.forEach((d, k) => d.classList.toggle('is-active', k === realIndex()));
+      dots.forEach((d, k) => { d.classList.toggle('is-active', k === realIndex()); d.setAttribute('aria-current', k === realIndex() ? 'true' : 'false'); });
     };
     const jumpTo = (p) => {            // saut instantané, sans transition
       track.classList.add('is-jumping'); pos = p; paint();

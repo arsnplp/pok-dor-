@@ -1,4 +1,10 @@
 /* ===== Le Poké Doré – styles communs ===== */
+/* ===== Polices auto-hébergées (RGPD : aucun appel à Google Fonts) ===== */
+@font-face{font-family:"Bowlby One SC";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/bowlby-one-sc-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Caveat";font-style:normal;font-weight:700;font-display:swap;src:url("assets/fonts/caveat-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Rubik";font-style:normal;font-weight:500;font-display:swap;src:url("assets/fonts/rubik-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:"Rubik";font-style:normal;font-weight:600;font-display:swap;src:url("assets/fonts/rubik-latin-600-normal.woff2") format("woff2")}
+
 :root{
   --navy:#0d1f8c;
   --navy-deep:#061250;
@@ -74,3 +80,8 @@ img,video{max-width:100%}
 .chef-call:active{transform:translateX(0) scale(.98) !important}
 @media (max-width:760px){.chef-call{width:112px;bottom:10px}}
 @media (prefers-reduced-motion:reduce){.chef-call{animation:none;transform:translateX(8%)}.chef-call img{animation:none}}
+
+/* ---------- FOOTER SIMPLE (pages légales, 404) ---------- */
+.legal-footer{background:var(--navy);color:var(--cream);padding:22px clamp(16px,4vw,56px);text-align:center;font:500 .88rem/1.6 "Rubik",sans-serif}
+.legal-footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(251,245,228,.5)}
+.legal-footer a:hover{color:var(--yellow);border-color:var(--yellow)}
