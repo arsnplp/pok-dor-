@@ -1473,12 +1473,11 @@
       if (busy) return; busy = true;
       pos += dir; paint();
     };
-    track.addEventListener('transitionend', e => {
-      if (e.target !== track) return;
-      busy = false;
-      if (pos === 0) jumpTo(n);
-      else if (pos === n + 1) jumpTo(1);
-    });
+    // Si on est sur une copie (extrémité), on saute sans animation sur l'original.
+    const settle = () => { if (pos === 0) jumpTo(n); else if (pos === n + 1) jumpTo(1); };
+    track.addEventListener('transitionend', e => { if (e.target !== track) return; busy = false; settle(); });
+    // Une transition annulée (second geste trop rapide) ne doit jamais bloquer ni laisser une copie active.
+    track.addEventListener('transitioncancel', e => { if (e.target !== track) return; busy = false; settle(); });
     const goTo = (k) => { if (busy) return; busy = true; pos = k + 1; paint(); };
 
     root.querySelector('[data-prev]').addEventListener('click', () => move(-1));
@@ -1496,14 +1495,14 @@
       if (lock === null) {
         if (Math.abs(ddx) < 6 && Math.abs(ddy) < 6) return;
         lock = Math.abs(ddx) > Math.abs(ddy) ? 'x' : 'y';
-        if (lock === 'x') { track.classList.add('is-dragging'); }
+        if (lock === 'x') { settle(); busy = false; track.classList.add('is-dragging'); }
       }
       if (lock !== 'x') return;
       if (ev && ev.cancelable) ev.preventDefault();
       dx = ddx;
       // résistance légère au-delà d'une slide
-      const w = slideW(); const lim = w * 1.1;
-      if (Math.abs(dx) > lim) dx = Math.sign(dx) * (lim + (Math.abs(dx) - lim) * 0.25);
+      const w = slideW(); const lim = w * 0.85;
+      if (Math.abs(dx) > lim) dx = Math.sign(dx) * (lim + (Math.abs(dx) - lim) * 0.15);
       track.style.setProperty('--dx', dx.toFixed(1) + 'px');
     };
     const finish = () => {
