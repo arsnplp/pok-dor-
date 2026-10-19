@@ -3,4 +3,4 @@ Allow: /
 Disallow: /.backup/
 Disallow: /image/avocat_files/
 
-Sitemap: https://www.lepokedore.fr/sitemap.xml
+Sitemap: https://poke-dore.fr/sitemap.xml
