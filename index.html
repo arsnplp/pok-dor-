@@ -165,7 +165,8 @@
     }
     .slide__bits{z-index:2}
     /* les visuels des pokés ont déjà leur ombre : pas d'ombre CSS en double */
-    #bowls-carousel .slide__media::before{display:none}
+    #bowls-carousel .slide__media::before,
+    #finger-carousel .slide__media::before{display:none}
     /* les ingrédients : rangés dans le bowl quand la slide est sur le côté, ils jaillissent quand elle arrive au centre */
     .slide__bits{
       position:absolute;inset:0;
@@ -213,7 +214,8 @@
     .saveurs .food[data-for]{opacity:0;transform:scale(.6)}
     .saveurs[data-active="bowls-carousel"] .food[data-for="bowls-carousel"],
     .saveurs[data-active="soups-carousel"] .food[data-for="soups-carousel"],
-    .saveurs[data-active="desserts-carousel"] .food[data-for="desserts-carousel"]{opacity:1;transform:none}
+    .saveurs[data-active="desserts-carousel"] .food[data-for="desserts-carousel"],
+    .saveurs[data-active="finger-carousel"] .food[data-for="finger-carousel"]{opacity:1;transform:none}
     /* desserts : pas de calque d'ingrédients, le pot est un peu plus petit */
     .slide--dessert .slide__media{padding:0 8%}
     .saveurs .food img{display:block;width:100%;height:auto;animation:float 6s ease-in-out infinite}
@@ -233,7 +235,7 @@
       .saveurs .food--a{left:3%;top:1.5%;width:50px}
       .saveurs .food--c{left:4%;bottom:3%;width:46px}
       .tabs{padding:4px;gap:4px}
-      .tab{padding:11px 14px;font-size:.72rem}
+      .tab{padding:11px 9px;font-size:.66rem;letter-spacing:.04em;white-space:nowrap}
       .saveurs .food--b{top:4%;right:3%;width:54px}
     }
 
@@ -575,6 +577,9 @@
   <div class="food food--a" data-for="desserts-carousel"><img src="image/chocolat-cut.webp" alt="" width="700" height="617" loading="lazy" decoding="async"></div>
   <div class="food food--b" data-for="desserts-carousel"><img src="image/framboise-cut.webp" alt="" width="700" height="652" loading="lazy" decoding="async"></div>
   <div class="food food--c" data-for="desserts-carousel"><img src="image/banane-cut.webp" alt="" width="700" height="656" loading="lazy" decoding="async"></div>
+  <div class="food food--a" data-for="finger-carousel"><img src="image/gyoza-cut.webp" alt="" width="700" height="563" loading="lazy" decoding="async"></div>
+  <div class="food food--b" data-for="finger-carousel"><img src="image/crevette-cut.webp" alt="" width="700" height="643" loading="lazy" decoding="async"></div>
+  <div class="food food--c" data-for="finger-carousel"><img src="image/nem-cut.webp" alt="" width="700" height="569" loading="lazy" decoding="async"></div>
 
   <div class="saveurs__head">
     <h2 class="saveurs__title">
@@ -587,6 +592,7 @@
       <button class="tab is-active" type="button" role="tab" aria-selected="true" data-tab="bowls-carousel">Poké bowls</button>
       <button class="tab" type="button" role="tab" aria-selected="false" data-tab="soups-carousel">Soupes</button>
       <button class="tab" type="button" role="tab" aria-selected="false" data-tab="desserts-carousel">Desserts</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="finger-carousel">Finger food</button>
     </div>
   </div>
 
@@ -784,6 +790,108 @@
       </button>
       <div class="carousel__dots" role="group" aria-label="Choisir un dessert"></div>
       <button class="carousel__arrow" type="button" data-next aria-label="Dessert suivant">
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="carousel" data-carousel id="finger-carousel" hidden>
+    <div class="carousel__viewport">
+      <div class="carousel__track" style="--i:0">
+
+        <article class="slide is-active">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/finger-gyoza-poulet-bowl.webp" alt="Gyoza Poulet : Raviolis japonais grillés, farce au poulet et légumes, sauce soja au sésame" width="1358" height="1159" loading="lazy" decoding="async">
+            <img class="slide__bits" src="image/finger-gyoza-poulet-bits.webp" alt="" aria-hidden="true" width="1358" height="1159" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Gyoza</span><span class="l2">Poulet</span></h3>
+            <p class="slide__text">Raviolis japonais grillés, farce au poulet et légumes, sauce soja au sésame.</p>
+            <a class="slide__btn" href="#truck">Où nous trouver</a>
+          </div>
+        </article>
+
+        <article class="slide">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/finger-gyoza-legumes-bowl.webp" alt="Gyoza Légumes : Raviolis japonais grillés, farce aux légumes croquants, sauce soja au sésame. 100 % végé" width="1358" height="1159" loading="lazy" decoding="async">
+            <img class="slide__bits" src="image/finger-gyoza-legumes-bits.webp" alt="" aria-hidden="true" width="1358" height="1159" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Gyoza</span><span class="l2">Légumes</span></h3>
+            <p class="slide__text">Raviolis japonais grillés, farce aux légumes croquants, sauce soja au sésame. 100 % végé.</p>
+            <a class="slide__btn" href="#truck">Où nous trouver</a>
+          </div>
+        </article>
+
+        <article class="slide">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/finger-tempura-crevette-bowl.webp" alt="Tempura Crevette : Crevettes en beurre de tempura léger et croustillant, sauce sweet chili" width="1358" height="1159" loading="lazy" decoding="async">
+            <img class="slide__bits" src="image/finger-tempura-crevette-bits.webp" alt="" aria-hidden="true" width="1358" height="1159" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Tempura</span><span class="l2">Crevette</span></h3>
+            <p class="slide__text">Crevettes en beurre de tempura léger et croustillant, sauce sweet chili.</p>
+            <a class="slide__btn" href="#truck">Où nous trouver</a>
+          </div>
+        </article>
+
+        <article class="slide">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/finger-chicken-karaage-bowl.webp" alt="Chicken Karaage : Poulet frit à la japonaise, mariné au gingembre et au soja, mayo citronnée" width="1358" height="1159" loading="lazy" decoding="async">
+            <img class="slide__bits" src="image/finger-chicken-karaage-bits.webp" alt="" aria-hidden="true" width="1358" height="1159" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Chicken</span><span class="l2">Karaage</span></h3>
+            <p class="slide__text">Poulet frit à la japonaise, mariné au gingembre et au soja, mayo citronnée.</p>
+            <a class="slide__btn" href="#truck">Où nous trouver</a>
+          </div>
+        </article>
+
+        <article class="slide">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/finger-falafel-bowl.webp" alt="Les Falafels : Boulettes de pois chiches aux herbes, croustillantes dehors, fondantes dedans, sauce yaourt. 100 % végé" width="1358" height="1159" loading="lazy" decoding="async">
+            <img class="slide__bits" src="image/finger-falafel-bits.webp" alt="" aria-hidden="true" width="1358" height="1159" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Les</span><span class="l2">Falafels</span></h3>
+            <p class="slide__text">Boulettes de pois chiches aux herbes, croustillantes dehors, fondantes dedans, sauce yaourt. 100 % végé.</p>
+            <a class="slide__btn" href="#truck">Où nous trouver</a>
+          </div>
+        </article>
+
+        <article class="slide">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/finger-nem-porc-bowl.webp" alt="Nem Porc : Nems croustillants au porc, salade, menthe et sauce nuoc-mâm" width="1358" height="1159" loading="lazy" decoding="async">
+            <img class="slide__bits" src="image/finger-nem-porc-bits.webp" alt="" aria-hidden="true" width="1358" height="1159" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Nem</span><span class="l2">Porc</span></h3>
+            <p class="slide__text">Nems croustillants au porc, salade, menthe et sauce nuoc-mâm.</p>
+            <a class="slide__btn" href="#truck">Où nous trouver</a>
+          </div>
+        </article>
+
+        <article class="slide">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/finger-nem-poulet-bowl.webp" alt="Nem Poulet : Nems croustillants au poulet, salade, menthe et sauce nuoc-mâm" width="1358" height="1159" loading="lazy" decoding="async">
+            <img class="slide__bits" src="image/finger-nem-poulet-bits.webp" alt="" aria-hidden="true" width="1358" height="1159" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Nem</span><span class="l2">Poulet</span></h3>
+            <p class="slide__text">Nems croustillants au poulet, salade, menthe et sauce nuoc-mâm.</p>
+            <a class="slide__btn" href="#truck">Où nous trouver</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="carousel__nav">
+      <button class="carousel__arrow" type="button" data-prev aria-label="Finger food précédent">
+        <svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+      </button>
+      <div class="carousel__dots" role="group" aria-label="Choisir un finger food"></div>
+      <button class="carousel__arrow" type="button" data-next aria-label="Finger food suivant">
         <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </button>
     </div>
