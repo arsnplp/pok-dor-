@@ -15,6 +15,7 @@ echo "== 2. Dossier du site : clone (ou mise à jour) du dépôt"
 if [ ! -d "$WEBROOT/.git" ]; then
   git clone "$REPO" "$WEBROOT"
 else
+  git config --global --add safe.directory "$WEBROOT" 2>/dev/null || true
   git -C "$WEBROOT" pull --ff-only
 fi
 chown -R www-data:www-data "$WEBROOT"

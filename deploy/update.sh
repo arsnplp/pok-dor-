@@ -2,6 +2,7 @@
 # Met à jour le site sur le VPS depuis GitHub (à lancer en root sur le VPS).
 set -euo pipefail
 WEBROOT="/var/www/poke-dore.fr"
+git config --global --add safe.directory "$WEBROOT" 2>/dev/null || true
 git -C "$WEBROOT" pull --ff-only
 chown -R www-data:www-data "$WEBROOT"
 if ! cmp -s "$WEBROOT/deploy/poke-dore.fr.conf" /etc/nginx/sites-available/poke-dore.fr; then
