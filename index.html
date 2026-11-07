@@ -164,6 +164,8 @@
       background:radial-gradient(ellipse at center, rgba(6,18,80,.26) 0%, rgba(6,18,80,.12) 45%, rgba(6,18,80,0) 72%);
     }
     .slide__bits{z-index:2}
+    /* les visuels des pokés ont déjà leur ombre : pas d'ombre CSS en double */
+    #bowls-carousel .slide__media::before{display:none}
     /* les ingrédients : rangés dans le bowl quand la slide est sur le côté, ils jaillissent quand elle arrive au centre */
     .slide__bits{
       position:absolute;inset:0;
@@ -594,7 +596,8 @@
 
         <article class="slide is-active">
           <div class="slide__media">
-            <img class="slide__bowl" src="image/poke-saumon-v2.webp" alt="Poké Saumon : riz, saumon, carottes, chou rouge, edamames, concombre, avocat, mangue" width="1356" height="1160" loading="lazy" decoding="async">
+            <img class="slide__bowl" src="image/poke-saumon-bowl.webp" alt="Poké Saumon : riz, saumon, carottes, chou rouge, edamames, concombre, avocat, mangue" width="1356" height="1160" loading="lazy" decoding="async">
+            <img class="slide__bits" src="image/poke-saumon-bits.webp" alt="" aria-hidden="true" width="1356" height="1160" loading="lazy" decoding="async">
           </div>
           <div class="slide__body">
             <h3 class="slide__name"><span class="l1">Poké</span><span class="l2">Saumon</span></h3>
@@ -606,7 +609,8 @@
 
         <article class="slide">
           <div class="slide__media">
-            <img class="slide__bowl" src="image/poke-poulet-v2.webp" alt="Poké Poulet : riz, poulet, carottes, chou rouge, edamames, concombre, avocat, mangue" width="1356" height="1159" loading="lazy" decoding="async">
+            <img class="slide__bowl" src="image/poke-poulet-bowl.webp" alt="Poké Poulet : riz, poulet, carottes, chou rouge, edamames, concombre, avocat, mangue" width="1356" height="1159" loading="lazy" decoding="async">
+            <img class="slide__bits" src="image/poke-poulet-bits.webp" alt="" aria-hidden="true" width="1356" height="1159" loading="lazy" decoding="async">
           </div>
           <div class="slide__body">
             <h3 class="slide__name"><span class="l1">Poké</span><span class="l2">Poulet</span></h3>
@@ -618,7 +622,8 @@
 
         <article class="slide">
           <div class="slide__media">
-            <img class="slide__bowl" src="image/poke-tofu-v2.webp" alt="Poké Tofu : riz, tofu, carottes, chou rouge, edamames, concombre, avocat, mangue" width="1356" height="1159" loading="lazy" decoding="async">
+            <img class="slide__bowl" src="image/poke-tofu-bowl.webp" alt="Poké Tofu : riz, tofu, carottes, chou rouge, edamames, concombre, avocat, mangue" width="1356" height="1159" loading="lazy" decoding="async">
+            <img class="slide__bits" src="image/poke-tofu-bits.webp" alt="" aria-hidden="true" width="1356" height="1159" loading="lazy" decoding="async">
           </div>
           <div class="slide__body">
             <h3 class="slide__name"><span class="l1">Poké</span><span class="l2">Tofu</span></h3>
@@ -630,7 +635,8 @@
 
         <article class="slide">
           <div class="slide__media">
-            <img class="slide__bowl" src="image/poke-falafel-v2.webp" alt="Poké Falafel : riz, falafel, carottes, chou rouge, edamames, concombre, avocat, mangue" width="1357" height="1159" loading="lazy" decoding="async">
+            <img class="slide__bowl" src="image/poke-falafel-bowl.webp" alt="Poké Falafel : riz, falafel, carottes, chou rouge, edamames, concombre, avocat, mangue" width="1357" height="1159" loading="lazy" decoding="async">
+            <img class="slide__bits" src="image/poke-falafel-bits.webp" alt="" aria-hidden="true" width="1357" height="1159" loading="lazy" decoding="async">
           </div>
           <div class="slide__body">
             <h3 class="slide__name"><span class="l1">Poké</span><span class="l2">Falafel</span></h3>
