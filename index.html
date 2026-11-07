@@ -185,6 +185,7 @@
     .slide__name .l1{display:block;color:#b28100}
     .slide__name .l2{display:block;color:var(--navy)}
     .slide__name .l2.is-long{font-size:.72em}
+    .slide__name .l2.is-xlong{font-size:.6em}
     .slide__text{margin-top:1.2em;max-width:34ch;font:600 clamp(.95rem,1.25vw,1.15rem)/1.5 "Rubik",sans-serif;color:var(--navy)}
     .slide__price{margin-top:.9em;font-family:"Bowlby One SC",cursive;font-size:clamp(1.4rem,2.4vw,2.2rem);color:#b28100;line-height:1}
     .slide__btn{
@@ -215,9 +216,12 @@
     .saveurs[data-active="bowls-carousel"] .food[data-for="bowls-carousel"],
     .saveurs[data-active="soups-carousel"] .food[data-for="soups-carousel"],
     .saveurs[data-active="desserts-carousel"] .food[data-for="desserts-carousel"],
-    .saveurs[data-active="finger-carousel"] .food[data-for="finger-carousel"]{opacity:1;transform:none}
+    .saveurs[data-active="finger-carousel"] .food[data-for="finger-carousel"],
+    .saveurs[data-active="sauces-carousel"] .food[data-for="sauces-carousel"]{opacity:1;transform:none}
     /* desserts : pas de calque d'ingrédients, le pot est un peu plus petit */
     .slide--dessert .slide__media{padding:0 8%}
+    .slide--sauce .slide__media{padding:0 10%}
+    .slide--sauce .slide__price{font-size:clamp(1.1rem,1.8vw,1.6rem)}
     .saveurs .food img{display:block;width:100%;height:auto;animation:float 6s ease-in-out infinite}
     @keyframes float{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-14px) rotate(calc(var(--r,0deg) + 4deg))}}
     .saveurs .food--a{left:4%;top:9%;width:clamp(50px,6vw,110px)}
@@ -235,6 +239,7 @@
       .saveurs .food--a{left:3%;top:1.5%;width:50px}
       .saveurs .food--c{left:4%;bottom:3%;width:46px}
       .tabs{padding:4px;gap:4px}
+      .tabs{flex-wrap:wrap;justify-content:center;border-radius:24px}
       .tab{padding:11px 9px;font-size:.66rem;letter-spacing:.04em;white-space:nowrap}
       .saveurs .food--b{top:4%;right:3%;width:54px}
     }
@@ -590,6 +595,7 @@
     <p class="saveurs__sub">Frais et croquants, préparés sous tes yeux !</p>
     <div class="tabs" role="tablist" aria-label="Choisir la catégorie">
       <button class="tab is-active" type="button" role="tab" aria-selected="true" data-tab="bowls-carousel">Poké bowls</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="sauces-carousel">Sauces</button>
       <button class="tab" type="button" role="tab" aria-selected="false" data-tab="soups-carousel">Soupes</button>
       <button class="tab" type="button" role="tab" aria-selected="false" data-tab="desserts-carousel">Desserts</button>
       <button class="tab" type="button" role="tab" aria-selected="false" data-tab="finger-carousel">Finger food</button>
@@ -661,6 +667,72 @@
       </button>
       <div class="carousel__dots" role="group" aria-label="Choisir un bowl"></div>
       <button class="carousel__arrow" type="button" data-next aria-label="Bowl suivant">
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="carousel" data-carousel id="sauces-carousel" hidden>
+    <div class="carousel__viewport">
+      <div class="carousel__track" style="--i:0">
+
+        <article class="slide slide--sauce is-active">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/sauce-asiatique.webp" alt="Sauce Asiatique : sauce soja, huile de sésame, ail, gingembre et sucre roux" width="651" height="632" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Sauce</span><span class="l2">Asiatique</span></h3>
+            <p class="slide__text">Sauce soja, huile de sésame, ail, gingembre et sucre roux. Brune, profonde, umami.</p>
+            <p class="slide__price">Incluse dans ton poké</p>
+            <a class="slide__btn" href="#bowls">Voir les pokés</a>
+          </div>
+        </article>
+
+        <article class="slide slide--sauce">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/sauce-epicee.webp" alt="Sauce Épicée : sriracha, mayonnaise et sauce soja sucrée" width="651" height="632" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Sauce</span><span class="l2">Épicée</span></h3>
+            <p class="slide__text">Sriracha, mayonnaise et sauce soja sucrée. Crémeuse, orange, avec du peps.</p>
+            <p class="slide__price">Incluse dans ton poké</p>
+            <a class="slide__btn" href="#bowls">Voir les pokés</a>
+          </div>
+        </article>
+
+        <article class="slide slide--sauce">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/sauce-agrumes.webp" alt="Sauce Agrumes : orange sanguine, citron vert, moutarde, miel, vinaigre de riz, huile de sésame et soja sucré" width="651" height="632" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Sauce</span><span class="l2">Agrumes</span></h3>
+            <p class="slide__text">Orange sanguine, citron vert, moutarde, miel, vinaigre de riz, huile de sésame et soja sucré. Dorée et légère.</p>
+            <p class="slide__price">Incluse dans ton poké</p>
+            <a class="slide__btn" href="#bowls">Voir les pokés</a>
+          </div>
+        </article>
+
+        <article class="slide slide--sauce">
+          <div class="slide__media">
+            <img class="slide__bowl" src="image/sauce-mediterranee.webp" alt="Sauce Méditerranée : huile d'olive, citron, basilic, ail et vinaigre" width="651" height="632" loading="lazy" decoding="async">
+          </div>
+          <div class="slide__body">
+            <h3 class="slide__name"><span class="l1">Sauce</span><span class="l2">Méditerranée</span></h3>
+            <p class="slide__text">Huile d'olive, citron, basilic, ail et vinaigre. Verte, fraîche, parfumée.</p>
+            <p class="slide__price">Incluse dans ton poké</p>
+            <a class="slide__btn" href="#bowls">Voir les pokés</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="carousel__nav">
+      <button class="carousel__arrow" type="button" data-prev aria-label="Sauce précédente">
+        <svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+      </button>
+      <div class="carousel__dots" role="group" aria-label="Choisir une sauce"></div>
+      <button class="carousel__arrow" type="button" data-next aria-label="Sauce suivante">
         <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </button>
     </div>
@@ -1648,7 +1720,7 @@
     return { reset: () => jumpTo(1) };
   };
   // les noms longs (ex. « Champignons ») passent en taille réduite pour ne pas écraser l'image
-  document.querySelectorAll('.slide__name .l2').forEach(el => { if (el.textContent.trim().length > 7) el.classList.add('is-long'); });
+  document.querySelectorAll('.slide__name .l2').forEach(el => { const n = el.textContent.trim().length; if (n > 10) el.classList.add('is-xlong'); else if (n > 7) el.classList.add('is-long'); });
   const carousels = {};
   document.querySelectorAll('[data-carousel]').forEach(c => { carousels[c.id] = initCarousel(c); });
 
